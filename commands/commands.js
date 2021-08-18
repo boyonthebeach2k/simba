@@ -1865,15 +1865,16 @@ module.exports = exports = function commandMap () {
 		name: 'junao'
 	}))
 	.set('commands', async () => {
-		let replyDesc = `\* test		: test servant damage
-		\* fq		: test servants on free quests
+		let replyDesc = `\* test (t)		: test servant damage
+		\* fq (f)		: test servants on free quests
 		\* chargers	: view servants with on-demand np gauge
-		\* help		: help for !test
-		\* getnames	: get nicknames for a servant
-		\* math		: \`+ - * / ^\` (no parens)
-		\* wikia	: search wikia using google
-		\* google	: search query with bing
+		\* help	(h)	: help for !test
+		\* getnames(g)	: get nicknames for a servant
+		\* math	(calc)	: \`+ - * / ^\` (no parens)
+		\* wikia (w)	: search wikia using google
+		\* google (bing, search)	: search query with bing
 		\* junao	: bring up np1/np5 junao+waver|merlin calc
+		\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
 		\* commands	: haha recursion`;
 		reply = {
 			embeds: [{

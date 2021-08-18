@@ -61,7 +61,7 @@ async function messageCreateHandler (message) {
 
 		}
 
-		if (['nonverbose', 'chain', 'multi-enemy'].includes(reply.name)) {
+		if (['nonverbose', 'chain', 'multi-enemy', 'getnames', 'junao', 'commands'].includes(reply.name)) {
 
 			message.channel.send(reply);
 			return;

@@ -266,13 +266,12 @@ async function getnames (restArgs) {
 		}
 	}
 
-	reply = {
-		damageEmbed: {
-			embeds: [{
-				title,
-				description
-			}]
-		}
+	const reply = {
+		embeds: [{
+			title,
+			description
+		}],
+		name: 'getnames'
 	};
 
 	return reply;
@@ -1862,10 +1861,11 @@ module.exports = exports = function commandMap () {
 		{
 			title: 'Junao/Merlin',
 			description: 'https://imgur.com/eA0YLIQ',
-		}]
+		}],
+		name: 'junao'
 	}))
 	.set('commands', async () => {
-		let replyDesc = `		\* test		: test servant damage
+		let replyDesc = `\* test		: test servant damage
 		\* fq		: test servants on free quests
 		\* chargers	: view servants with on-demand np gauge
 		\* help		: help for !test
@@ -1879,7 +1879,8 @@ module.exports = exports = function commandMap () {
 			embeds: [{
 				title: '__Commands__',
 				description: replyDesc
-			}]
+			}],
+			name: 'commands'
 		};
 		return reply;
 	})

@@ -1,6 +1,7 @@
 .eslintrc.json
 .env
+package-lock.json
+main.dev.js
 .vscode/
 etc/
 node_modules/
-package-lock.json

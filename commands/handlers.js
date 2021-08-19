@@ -3,7 +3,7 @@ const commands = require('../commands/commands.js')();
 
 let emojis = require('../assets/emojis.json');
 
-emojis = [emojis.find(e=>e.name==='gateofsnekked').toString(), emojis.find(e=>e.name==='coronasnekfacethatiyoinkedfromga').toString()]
+emojis = [emojis.find(e=>e.name==='gateofsnekked'), emojis.find(e=>e.name==='coronasnekfacethatiyoinkedfromga')]
 .map(emoji => ({ name: emoji.name, id: emoji.id, toString () { return `<:${this.name}:${this.id}>` } }));
 
 async function messageCreateHandler (message) {
@@ -100,6 +100,8 @@ async function messageCreateHandler (message) {
 			},
 			time: 30000
 		});
+
+		setTimeout(() => replyEmbed.edit({ embeds: replyEmbed.embeds, components: [{type:1,components:replyEmbed.components[0].components.map(c=>{c.disabled=true;return c})}]}), 30000);
 
 		collector.on('collect', async interaction => {
 

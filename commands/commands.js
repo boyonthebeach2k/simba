@@ -1826,7 +1826,7 @@ async function factorial (n) {
 
 module.exports = exports = function commandMap () {
 
-	emojis = emojiArray.map(emoji => ({name: emoji.name, id: emoji.id, toString() { return`<:${this.name}:${this.id}>`}}));
+	emojis = emojiArray.map(emoji => ({name: emoji.name, id: emoji.id, toString() { return `<:${this.name}:${this.id}>`}}));
 
 	return new Map()
 	.set('test', test)

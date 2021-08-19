@@ -1,6 +1,10 @@
 const { prefix, aaPrefix } = require('../assets/constants.js');
 const commands = require('../commands/commands.js')();
-const emojis = require('../assets/emojis.json');
+
+let emojis = require('../assets/emojis.json');
+
+emojis = [emojis.find(e=>e.name==='gateofsnekked').toString(), emojis.find(e=>e.name==='coronasnekfacethatiyoinkedfromga').toString()]
+.map(emoji => ({ name: emoji.name, id: emoji.id, toString () { return `<:${this.name}:${this.id}>` } }));
 
 async function messageCreateHandler (message) {
 
@@ -16,14 +20,17 @@ async function messageCreateHandler (message) {
 	if (!message.content.startsWith(_prefix))
 		return;
 	
-	let commandBody = message.content.slice(_prefix.length), reply, command, restArgs;
+	let commandBody = message.content.slice(_prefix.length).trim(), reply, command, restArgs;
 
 	if (commandBody.length == 0) return;
 
 	[command, ...restArgs] = commandBody.toLowerCase().split(/\s+/);
 	command = command.toLowerCase();
 
-	reply = await commands.get(command)(restArgs, message);
+	if (commands.has(command))
+		reply = await commands.get(command)(restArgs, message);
+	else
+		reply = { content: `"${command}" not recognised!` };
 
 	if (reply) {
 
@@ -101,6 +108,5 @@ async function messageCreateHandler (message) {
 		});
 	}
 }
-
 
 module.exports = exports = { messageCreateHandler };

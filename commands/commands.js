@@ -14,7 +14,7 @@ let emojis = [];
 
 async function test (restArgs) {
 
-	let argStr, servant;
+	let argStr, servant, reply;
 
 	try {
 		[servant, argStr] = restArgs;
@@ -33,7 +33,8 @@ async function test (restArgs) {
 			matches = restArgs.match(/([bqax]|(np)){3}/g);
 
 			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
-			servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
+
+			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 
 			if (argStr.includes('--enemy=')) {
 
@@ -61,7 +62,7 @@ async function test (restArgs) {
 
 async function freeQuestsCalc (restArgs) {
 
-	let argStr, servant, fq;
+	let argStr, servant, fq, reply;
 
 	try {
 
@@ -81,8 +82,8 @@ async function freeQuestsCalc (restArgs) {
 			matches = restArgs.match(/([bqa]|(np)){3}/g);
 
 			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
-			servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 
+			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 			let war = Object.keys(freeQuests).find(section => Object.keys(freeQuests[section]).includes(fq));
 			let quest = freeQuests[war][fq];
 			let enemyStr = '';
@@ -99,7 +100,7 @@ async function freeQuestsCalc (restArgs) {
 
 			let tmpAry = Array.from(waveCmds);
 
-			waveCmds = Array(3).fill().map(_=>({command: ''}));
+			waveCmds = Array(3).fill().map(()=>({command: ''}));
 
 			for (let wave of tmpAry) {
 
@@ -109,15 +110,15 @@ async function freeQuestsCalc (restArgs) {
 
 			let enemy;
 
-			if (enemy = quest.phases[0][0]) enemyStr += ` --enemy=3 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[0][1]) enemyStr += ` --enemy=2 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[0][2]) enemyStr += ` --enemy=1 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command} `;
-			if (enemy = quest.phases[1][0]) enemyStr += ` --enemy=6 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[1][1]) enemyStr += ` --enemy=5 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[1][2]) enemyStr += ` --enemy=4 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command} `;
-			if (enemy = quest.phases[2][0]) enemyStr += ` --enemy=9 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[2][1]) enemyStr += ` --enemy=8 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
-			if (enemy = quest.phases[2][2]) enemyStr += ` --enemy=7 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command} `;
+			if ((enemy = quest.phases[0][0])) enemyStr += ` --enemy=3 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[0][1])) enemyStr += ` --enemy=2 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[0][2])) enemyStr += ` --enemy=1 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[0].command} `;
+			if ((enemy = quest.phases[1][0])) enemyStr += ` --enemy=6 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[1][1])) enemyStr += ` --enemy=5 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[1][2])) enemyStr += ` --enemy=4 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[1].command} `;
+			if ((enemy = quest.phases[2][0])) enemyStr += ` --enemy=9 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[2][1])) enemyStr += ` --enemy=8 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
+			if ((enemy = quest.phases[2][2])) enemyStr += ` --enemy=7 --${enemy.attribute} --${enemy.class} --name=${enemy.name} --hp=${enemy.hp} ${waveCmds[2].command} `;
 
 			reply = await multiEnemy(servant,baseStr + ' ' + enemyStr + ' ' + enemyStrs, servantId, matches);
 		}
@@ -134,7 +135,7 @@ async function freeQuestsCalc (restArgs) {
 
 async function xmas (restArgs) {
 
-	let argStr, servant;
+	let argStr, servant, reply;
 
 	try {
 		[servant, argStr] = restArgs;
@@ -153,8 +154,8 @@ async function xmas (restArgs) {
 			matches = restArgs.match(/([bqa]|(np)){3}/g);
 
 			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
-			servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 
+			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 			let enemyStr = '';
 			let baseStr, enemyStrs;
 
@@ -169,7 +170,7 @@ async function xmas (restArgs) {
 
 			let tmpAry = Array.from(waveCmds);
 
-			waveCmds = Array(3).fill().map(_=>({command: ''}));
+			waveCmds = Array(3).fill().map(()=>({command: ''}));
 
 			for (let wave of tmpAry) {
 
@@ -211,11 +212,11 @@ async function help (_, message) {
 			{
 				type: 1,
 				components: [
-					{ type: 2, label: "General", style: 2, custom_id: "testArgs" },
-					{ type: 2, label: "Cards", style: 2, custom_id: "cardArgs" },
-					{ type: 2, label: "Waves", style: 2, custom_id: "nonDmgArgs" },
-					{ type: 2, label: "Aux", style: 2, custom_id: "waveArgs" },
-					{ type: 2, label: "Shorthands", style: 2, custom_id: "shorthands" }
+					{ type: 2, label: 'General', style: 2, custom_id: 'testArgs' },
+					{ type: 2, label: 'Cards', style: 2, custom_id: 'cardArgs' },
+					{ type: 2, label: 'Waves', style: 2, custom_id: 'nonDmgArgs' },
+					{ type: 2, label: 'Aux', style: 2, custom_id: 'waveArgs' },
+					{ type: 2, label: 'Shorthands', style: 2, custom_id: 'shorthands' }
 				]
 	
 			}
@@ -260,7 +261,7 @@ async function getnames (restArgs) {
 
 		if (names) {
 
-			title = `Nicknames for ${servant} (ID #${id}):`
+			title = `Nicknames for ${servant} (ID #${id}):`;
 			description = names.join('\n');
 
 		}
@@ -279,6 +280,8 @@ async function getnames (restArgs) {
 }
 
 async function addname (restArgs, message) {
+
+	let reply;
 
 	if (message.author.id === '677587347075760165' || message.author.id === '406537966161362955' || message.author.id === '200914311202209793' || message.author.id === '272691231883132928' || message.author.id === '455223550085693440') {
 
@@ -304,169 +307,171 @@ async function calc (servantId, argStr, servantName) {
 	let args, warnMessage = '';
 
 	try {
-	args = arg({
+		args = arg({
 
-		//Variables
-		'--atkmod'				:	[Number],
-		'--npmod'				:	[Number],
-		'--nplevel'				:	Number,
-		'--npvalue'				:	Number,
-		'--level'				:	Number,
-		'--cardmod'				:	[Number],
-		'--artsmod'				:	[Number],
-		'--bustermod'			:	[Number],
-		'--quickmod'			:	[Number],
-		'--extramod'			:	[Number],
-		'--str'					:	Number,
-		'--ce'					:	Number,
-		'--fou'					:	Number,
-		'--totalattack'			:	Number,
-		'--cardvalue'			:	Number,
-		'--npval'				:	Number,
-		'--npgen'				:	[Number],
-		'--defmod'				:	[Number],
-		'--flatdamage'			:	[Number],
-		'--flatrefund'			:	[Number],
-		'--semod'				:	[Number],
-		'--pmod'				:	[Number],
-		'--specialdefensemod'	:	[Number],
-		'--critdamage'			:	[Number],
-		'--arts'				:	Boolean,
-		'--quick'				:	Boolean,
-		'--buster'				:	Boolean,
-		'--critical'			:	Boolean,
-		'--busterfirst'			:	Boolean,
-		'--artsfirst'			:	Boolean,
-		'--quickfirst'			:	Boolean,
-		'--first'				:	Boolean,
-		'--second'				:	Boolean,
-		'--third'				:	Boolean,
-		'--extra'				:	Boolean,
-		'--extracardmodifier'	:	Number,
-		'--enemyservermod'		:	Number,
-		'--serverrate'			:	Number,
-		'--stargen'				:	[Number],
-		'--stars'				:	Boolean,
-		'--cardrefundvalue'		:	Number,
-		'--classoverride'		:	Number,
-		'--enemyhp'				:	Number,
-		'--bc'					:	Boolean,
-		'--brave'				:	Boolean,
-		'--nonverbose'			:	Boolean,
-		'--verbose'				:	arg.COUNT,
-		'--superbg'				:	Boolean,
-		'--superad'				:	Boolean,
-		'--supersumo'			:	Boolean,
-		'--superhns'			:	Boolean,
-		'--superscope'			:	Boolean,
-		'--superfondant'		:	Boolean,
-		'--supered'				:	Boolean,
-		'--supergrail'			:	Boolean,
+			/* eslint-disable no-dupe-keys */
 
-		//Aliases
-		'--v'					:	'--verbose',
-		'--nv'					:	'--nonverbose',
-		'--a'					:	'--atkmod',
-		'--atk'					:	'--atkmod',
-		'--n'					:	'--npmod',
-		'--np'					:	'--nplevel',
-		'--npv'					:	'--npvalue',
-		'--npval'				:	'--npvalue',
-		'--npo'					:	'--npvalue',
-		'--npoverride'			:	'--npvalue',
-		'--lvl'					:	'--level',
-		'--l'					:	'--level',
-		'--npgain'				:	'--npgen',
-		'--ng'					:	'--npgen',
-		'--sg'					:	'--stargen',
-		'--m'					:	'--cardmod',
-		'--am'					:	'--artsmod',
-		'--bm'					:	'--bustermod',
-		'--qm'					:	'--quickmod',
-		'--em'					:	'--extramod',
-		'--hp'					:	'--enemyhp',
-		'--c'					:	'--ce',
-		'--cm'					:	'--cardmod',
-		'--f'					:	'--fou',
-		'--cmv'					:	'--cardvalue',
-		'--npv'					:	'--npvalue',
-		'--d'					:	'--defmod',
-		'--def'					:	'--defmod',
-		'--fd'					:	'--flatdamage',
-		'--ad'					:	'--flatdamage',
-		'--flatgain'			:	'--flatrefund',
-		'--fr'					:	'--flatrefund',
-		'--fg'					:	'--flatrefund',
-		'--se'					:	'--semod',
-		'--s'					:	'--semod',
-		'--p'					:	'--pmod',
-		'--sdm'					:	'--specialdefensemod',
-		'--crit'				:	'--critical',
-		'--bf'					:	'--busterfirst',
-		'--busterchainmod'		:	'--bc',
-		'--crv'					:	'--cardrefundvalue',
-		'--af'					:	'--artsfirst',
-		'--qf'					:	'--quickfirst',
-		'--sm'					:	'--enemyservermod',
-		'--esm'					:	'--enemyservermod',
-		'--sm'					:	'--enemyservermod',
-		'--srr'					:	'--serverrate',
-		'--sr'					:	'--serverrate',
-		'--srv'					:	'--serverrate',
-		'--ecm'					:	'--extracardmodifier',
-		'--cao'					:	'--classoverride',
-		'--man'					:	'--human',
-		'--zerk'				:	'--berserker',
-		'--zerker'				:	'--berserker',
-		'--ae'					:	'--alterego',
-		'--cd'					:	'--critdamage',
-		'--ta'					:	'--totalattack',
-		'--sbg'					:	'--superbg',
-		'--sf'					:	'--superfondant',
-		'--sscope'				:	'--superscope',
-		'--super'				:	'--supered',
-		'--superer'				:	'--supergrail',
-		'--hyper'				:	'--supergrail',
+			//Variables
+			'--atkmod'				:	[Number],
+			'--npmod'				:	[Number],
+			'--nplevel'				:	Number,
+			'--npvalue'				:	Number,
+			'--level'				:	Number,
+			'--cardmod'				:	[Number],
+			'--artsmod'				:	[Number],
+			'--bustermod'			:	[Number],
+			'--quickmod'			:	[Number],
+			'--extramod'			:	[Number],
+			'--str'					:	Number,
+			'--ce'					:	Number,
+			'--fou'					:	Number,
+			'--totalattack'			:	Number,
+			'--cardvalue'			:	Number,
+			'--npval'				:	Number,
+			'--npgen'				:	[Number],
+			'--defmod'				:	[Number],
+			'--flatdamage'			:	[Number],
+			'--flatrefund'			:	[Number],
+			'--semod'				:	[Number],
+			'--pmod'				:	[Number],
+			'--specialdefensemod'	:	[Number],
+			'--critdamage'			:	[Number],
+			'--arts'				:	Boolean,
+			'--quick'				:	Boolean,
+			'--buster'				:	Boolean,
+			'--critical'			:	Boolean,
+			'--busterfirst'			:	Boolean,
+			'--artsfirst'			:	Boolean,
+			'--quickfirst'			:	Boolean,
+			'--first'				:	Boolean,
+			'--second'				:	Boolean,
+			'--third'				:	Boolean,
+			'--extra'				:	Boolean,
+			'--extracardmodifier'	:	Number,
+			'--enemyservermod'		:	Number,
+			'--serverrate'			:	Number,
+			'--stargen'				:	[Number],
+			'--stars'				:	Boolean,
+			'--cardrefundvalue'		:	Number,
+			'--classoverride'		:	Number,
+			'--enemyhp'				:	Number,
+			'--bc'					:	Boolean,
+			'--brave'				:	Boolean,
+			'--nonverbose'			:	Boolean,
+			'--verbose'				:	arg.COUNT,
+			'--superbg'				:	Boolean,
+			'--superad'				:	Boolean,
+			'--supersumo'			:	Boolean,
+			'--superhns'			:	Boolean,
+			'--superscope'			:	Boolean,
+			'--superfondant'		:	Boolean,
+			'--supered'				:	Boolean,
+			'--supergrail'			:	Boolean,
 
-		//Debug and internal
-		'--dump'				:	Boolean,
-		'--reducedhp'			:	Number,
-		'--maxreducedhp'		:	Number,
+			//Aliases
+			'--v'					:	'--verbose',
+			'--nv'					:	'--nonverbose',
+			'--a'					:	'--atkmod',
+			'--atk'					:	'--atkmod',
+			'--n'					:	'--npmod',
+			'--np'					:	'--nplevel',
+			'--npv'					:	'--npvalue',
+			'--npval'				:	'--npvalue',
+			'--npo'					:	'--npvalue',
+			'--npoverride'			:	'--npvalue',
+			'--lvl'					:	'--level',
+			'--l'					:	'--level',
+			'--npgain'				:	'--npgen',
+			'--ng'					:	'--npgen',
+			'--sg'					:	'--stargen',
+			'--m'					:	'--cardmod',
+			'--am'					:	'--artsmod',
+			'--bm'					:	'--bustermod',
+			'--qm'					:	'--quickmod',
+			'--em'					:	'--extramod',
+			'--hp'					:	'--enemyhp',
+			'--c'					:	'--ce',
+			'--cm'					:	'--cardmod',
+			'--f'					:	'--fou',
+			'--cmv'					:	'--cardvalue',
+			'--npv'					:	'--npvalue',
+			'--d'					:	'--defmod',
+			'--def'					:	'--defmod',
+			'--fd'					:	'--flatdamage',
+			'--ad'					:	'--flatdamage',
+			'--flatgain'			:	'--flatrefund',
+			'--fr'					:	'--flatrefund',
+			'--fg'					:	'--flatrefund',
+			'--se'					:	'--semod',
+			'--s'					:	'--semod',
+			'--p'					:	'--pmod',
+			'--sdm'					:	'--specialdefensemod',
+			'--crit'				:	'--critical',
+			'--bf'					:	'--busterfirst',
+			'--busterchainmod'		:	'--bc',
+			'--crv'					:	'--cardrefundvalue',
+			'--af'					:	'--artsfirst',
+			'--qf'					:	'--quickfirst',
+			'--sm'					:	'--enemyservermod',
+			'--esm'					:	'--enemyservermod',
+			'--sm'					:	'--enemyservermod',
+			'--srr'					:	'--serverrate',
+			'--sr'					:	'--serverrate',
+			'--srv'					:	'--serverrate',
+			'--ecm'					:	'--extracardmodifier',
+			'--cao'					:	'--classoverride',
+			'--man'					:	'--human',
+			'--zerk'				:	'--berserker',
+			'--zerker'				:	'--berserker',
+			'--ae'					:	'--alterego',
+			'--cd'					:	'--critdamage',
+			'--ta'					:	'--totalattack',
+			'--sbg'					:	'--superbg',
+			'--sf'					:	'--superfondant',
+			'--sscope'				:	'--superscope',
+			'--super'				:	'--supered',
+			'--superer'				:	'--supergrail',
+			'--hyper'				:	'--supergrail',
 
-		//Enemy classes
-		'--saber'				:	Boolean,
-		'--archer'				:	Boolean,
-		'--lancer'				:	Boolean,
-		'--rider'				:	Boolean,
-		'--caster'				:	Boolean,
-		'--assassin'			:	Boolean,
-		'--berserker'			:	Boolean,
-		'--shielder'			:	Boolean,
-		'--ruler'				:	Boolean,
-		'--alterego'			:	Boolean,
-		'--avenger'				:	Boolean,
-		'--demongodpillar'		:	Boolean,
-		'--beastii'				:	Boolean,
-		'--beasti'				:	Boolean,
-		'--mooncancer'			:	Boolean,
-		'--beastiiir'			:	Boolean,
-		'--beastiiil'			:	Boolean,
-		'--foreigner'			:	Boolean,
-		'--beastunknown'		:	Boolean,
-		'--pretender'			:	Boolean,
-		'--cccfinaleemiyaalter'	:	Boolean,
+			//Debug and internal
+			'--dump'				:	Boolean,
+			'--reducedhp'			:	Number,
+			'--maxreducedhp'		:	Number,
 
-		//Enemy attributes
-		'--human'				:	Boolean,
-		'--sky'					:	Boolean,
-		'--earth'				:	Boolean,
-		'--star'				:	Boolean,
-		'--beast'				:	Boolean
+			//Enemy classes
+			'--saber'				:	Boolean,
+			'--archer'				:	Boolean,
+			'--lancer'				:	Boolean,
+			'--rider'				:	Boolean,
+			'--caster'				:	Boolean,
+			'--assassin'			:	Boolean,
+			'--berserker'			:	Boolean,
+			'--shielder'			:	Boolean,
+			'--ruler'				:	Boolean,
+			'--alterego'			:	Boolean,
+			'--avenger'				:	Boolean,
+			'--demongodpillar'		:	Boolean,
+			'--beastii'				:	Boolean,
+			'--beasti'				:	Boolean,
+			'--mooncancer'			:	Boolean,
+			'--beastiiir'			:	Boolean,
+			'--beastiiil'			:	Boolean,
+			'--foreigner'			:	Boolean,
+			'--beastunknown'		:	Boolean,
+			'--pretender'			:	Boolean,
+			'--cccfinaleemiyaalter'	:	Boolean,
 
-	}, {
-		argv: argStr.split(/\s+/g),
-		permissive: true
-	});} catch(err) {
+			//Enemy attributes
+			'--human'				:	Boolean,
+			'--sky'					:	Boolean,
+			'--earth'				:	Boolean,
+			'--star'				:	Boolean,
+			'--beast'				:	Boolean
+
+		}, {
+			argv: argStr.split(/\s+/g),
+			permissive: true
+		});} catch(err) {
 		if (err.code === 'ARG_UNKNOWN_OPTION') warnMessage +=  err.message.split('--').join('') + '\n';
 		else return { content: `${err}`.replace(/--/g, '') };
 	}
@@ -526,10 +531,10 @@ async function calc (servantId, argStr, servantName) {
 		}
 
 		switch (servant.noblePhantasms[np].card) {
-			case "buster": cardType = 1.5; break;
-			case "arts:": cardType = 1; break;
-			case "quick": cardType = 0.8; break;
-			default: cardType = 1;
+		case 'buster': cardType = 1.5; break;
+		case 'arts:': cardType = 1; break;
+		case 'quick': cardType = 0.8; break;
+		default: cardType = 1;
 		}
 
 
@@ -587,12 +592,12 @@ async function calc (servantId, argStr, servantName) {
 
 		if (npLevel > 4) {
 
-			warnMessage += "NP Level cannot be greater than 5, setting to 5 (default).\n";
+			warnMessage += 'NP Level cannot be greater than 5, setting to 5 (default).\n';
 			npLevel = 4;
 
 		} else if (npLevel < 0) {
 
-			warnMessage += "NP Level cannot be lesser than 1, setting to 1.\n";
+			warnMessage += 'NP Level cannot be lesser than 1, setting to 1.\n';
 			npLevel = 0;
 
 		}
@@ -616,7 +621,7 @@ async function calc (servantId, argStr, servantName) {
 				embeds: [{
 					title: `**${servantName}** NP does not deal damage!`,
 					description: '0 (0 to 0)'
-			 	}],
+				}],
 				total: 0,
 				minrollTotal: 0,
 				maxrollTotal: 0
@@ -781,8 +786,6 @@ async function calc (servantId, argStr, servantName) {
 		else if (args.buster) faceCard = 'Buster';
 		else faceCard = 'NP';
 
-		minrollTotalVal = 0.9 * (val - fD) + fD;
-
 		for (const hit of hits.slice(0, hits.length - 1)) {
 
 			total += val * f(f(f(hit)/f(100))); //add until second-to-last, then add the difference
@@ -804,13 +807,13 @@ async function calc (servantId, argStr, servantName) {
 			else if (args.third && faceCard) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
 
 			switch (enemyClass) {
-				case 'archer': serverRate = 0.05; break;
-				case 'lancer': serverRate = -0.05; break;
-				case 'rider': serverRate = 0.01; break;
-				case 'assassin':
-				case 'avenger':
-				case 'pretender': serverRate = -0.01; break;
-				default: serverRate = 0; break;
+			case 'archer': serverRate = 0.05; break;
+			case 'lancer': serverRate = -0.05; break;
+			case 'rider': serverRate = 0.01; break;
+			case 'assassin':
+			case 'avenger':
+			case 'pretender': serverRate = -0.01; break;
+			default: serverRate = 0; break;
 			}
 
 			serverRate = args.serverrate ?? serverRate;
@@ -851,8 +854,8 @@ async function calc (servantId, argStr, servantName) {
 			];
 
 			starFields = [
-				{name: 'Minroll Stars Gained', value: `${emojis.find(e=>e.name==='instinct')} **${minrollAvgStars}** (${minrollTotalMinStars} - ${minrollTotalMaxStars})`},
-				{name: 'Maxroll Stars Gained', value: `${emojis.find(e=>e.name==='instinct')} **${maxrollAvgStars}** (${maxrollTotalMinStars} - ${maxrollTotalMaxStars})`}
+				{name: 'Minroll Stars Gained', value: `${emojis.find(e=>e.name==='instinct')} **${minrollAvgStars}** (${minrollTotalMinStars} - ${minrollTotalMaxStars}) [${overkillNo} OKH]`},
+				{name: 'Maxroll Stars Gained', value: `${emojis.find(e=>e.name==='instinct')} **${maxrollAvgStars}** (${maxrollTotalMinStars} - ${maxrollTotalMaxStars}) [${maxOverkillNo} OKH]`}
 			];
 
 			let embedFields = [...(args.nonverbose ? [] : verboseFields), ...starFields];
@@ -861,15 +864,17 @@ async function calc (servantId, argStr, servantName) {
 				embeds: [{
 					title: 'Stars Gained',
 					fields: embedFields
-					}],
+				}],
 				name: 'stars',
 				minrollTotalMinStars,
 				minrollTotalMaxStars,
 				maxrollTotalMinStars,
 				maxrollTotalMaxStars,
 				minrollAvgStars,
-				maxrollAvgStars
-				};
+				maxrollAvgStars,
+				overkillNo,
+				maxOverkillNo
+			};
 
 		}
 
@@ -884,11 +889,11 @@ async function calc (servantId, argStr, servantName) {
 			if (args.maxreducedhp) maxReducedHp = args.maxreducedhp;
 
 			switch (`${(faceCard === 'NP') ? servant.noblePhantasms[np].card : faceCard.toLowerCase()}`) {
-				case 'arts': cardNpValue = 3; break;
-				case 'quick': cardNpValue = 1; break;
-				case 'buster': cardNpValue = 0; break;
-				case 'extra': cardNpValue = 1; break;
-				default: cardNpValue = 1; break;
+			case 'arts': cardNpValue = 3; break;
+			case 'quick': cardNpValue = 1; break;
+			case 'buster': cardNpValue = 0; break;
+			case 'extra': cardNpValue = 1; break;
+			default: cardNpValue = 1; break;
 			}
 
 			cardNpValue = args.cardrefundvalue ?? cardNpValue;
@@ -897,12 +902,12 @@ async function calc (servantId, argStr, servantName) {
 			if (args.third && (faceCard !== 'NP')) cardNpValue *= 2;
 
 			switch (enemyClass) {
-				case 'rider': enemyServerMod = 1.1; break;
-				case 'caster': enemyServerMod = 1.2; break;
-				case 'assassin': enemyServerMod = 0.9; break;
-				case 'berserker': enemyServerMod = 0.8; break;
-				case 'moonCancer': enemyServerMod = 1.2; break;
-				default: enemyServerMod = 1; break;
+			case 'rider': enemyServerMod = 1.1; break;
+			case 'caster': enemyServerMod = 1.2; break;
+			case 'assassin': enemyServerMod = 0.9; break;
+			case 'berserker': enemyServerMod = 0.8; break;
+			case 'moonCancer': enemyServerMod = 1.2; break;
+			default: enemyServerMod = 1; break;
 			}
 
 			if ((cardNpValue === 3 &&  !(args.second || args.third)) || args.artsfirst) artsFirst = 1;
@@ -940,7 +945,7 @@ async function calc (servantId, argStr, servantName) {
 				minNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isOverkill)/2)) / 100;
 				maxNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isMaxOverkill)/2)) / 100;
 
-				descriptionString += "| " + ((i+1)+'   ').substring(0, 3) + "| " +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + "|" + (Math.floor(enemyHp - reducedHp)+' '.repeat(8)).substring(0, 8) + "| " + (minNPRegen.toFixed(2)+"%"+' '.repeat(7)).substring(0, 7) + "|\n";
+				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(enemyHp - reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
 
 			}
 
@@ -1051,15 +1056,15 @@ async function calc (servantId, argStr, servantName) {
 			embeds: [{
 				title: `${faceCard} damage for ${emojis.find(e=>e.name===servant.className.toLowerCase())} ${servantName} using:`,
 				fields: []
-				}],
+			}],
 			name: 'verbose'
-			};
+		};
 
 		let newfields = [
 			{name: 'Base Attack', value: `${atk - (args.fou ?? 1000) - (args.ce ?? 0)}`, inline: true},
 			{name: 'Fou Attack', value: `${(args.fou ?? 1000)}`, inline: true},
 			{name: 'Level', value: `${(args.level ?? servant.lvMax)}`, inline: true},
-			{name: 'Strengthen', value: `${(!!+np) ? emojis.find(e=>e.name==='nplewd') : emojis.find(e=>e.name==='nolewd')} ${!!+np}`, inline: true},
+			{name: 'Strengthen', value: `${(+np) ? emojis.find(e=>e.name==='nplewd') : emojis.find(e=>e.name==='nolewd')} ${!!+np}`, inline: true},
 			{name: 'CE Attack', value: `${(args.ce ?? 0)}`, inline: true},
 			{name: 'Class Attack Mod', value: `${emojis.find(e=>e.name===servant.className.toLowerCase())} ${+(classList[servant.className]/1000).toFixed(2)}x`, inline: true},
 			{name: 'Class Advantage', value: `${advantage}x`, inline: true},
@@ -1105,7 +1110,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 	}
 
-	if (servant == undefined) return `Error: Bad servant.`;
+	if (servant == undefined) return 'Error: Bad servant.';
 
 	for (let i = 0; i < 3; i++) {
 
@@ -1115,27 +1120,27 @@ async function chain (servantId, argStr, servantName, match) {
 		}
 		else {
 			switch (cards[i]) {
-				case 'b':
-					chain[i].name = 'buster'; break;
-				case 'q':
-					chain[i].name = 'quick'; break;
-				case 'a':
-					chain[i].name = 'arts'; break;
-				case 'x':
-					chain[i].name = 'skip'; break;
-				default:
-					break;
+			case 'b':
+				chain[i].name = 'buster'; break;
+			case 'q':
+				chain[i].name = 'quick'; break;
+			case 'a':
+				chain[i].name = 'arts'; break;
+			case 'x':
+				chain[i].name = 'skip'; break;
+			default:
+				break;
 			}
 
 			chain[i].np = false;
 
 			switch (i) {
-				case 0:
-					chain[i].position = 'first'; break;
-				case 1:
-					chain[i].position = 'second'; break;
-				case 2:
-					chain[i].position = 'third'; break;
+			case 0:
+				chain[i].position = 'first'; break;
+			case 1:
+				chain[i].position = 'second'; break;
+			case 2:
+				chain[i].position = 'third'; break;
 			}
 		}
 	}
@@ -1187,7 +1192,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 		let cardNo = command[0] - 1;
 
-		chain[cardNo].command += command.slice(2) + " ";
+		chain[cardNo].command += command.slice(2) + ' ';
 
 	}
 
@@ -1202,11 +1207,11 @@ async function chain (servantId, argStr, servantName, match) {
 
 	}
 
-	let enemyAttribute, enemyClass;
+	let enemyAttribute, enemyClass, enemyClassEmoji;
 
 	for (let i = 0; i < chain.length; i++) {
 
-		let testReply, testEmbed, card = chain[i], maxAttache, maxtestReply, maxTestEmbed;
+		let testReply, testEmbed, card = chain[i], maxAttache, maxTestReply;
 
 		if (card.name === 'skip') continue;
 
@@ -1229,25 +1234,21 @@ async function chain (servantId, argStr, servantName, match) {
 
 		// } //`stars` is redundant
 
-		let damageVals, maxDamageVals;
+		let damageVals;
 
 		if (Array.isArray(testReply)) {
 
 			testEmbed = testReply[0].embeds[0];
-			maxTestEmbed = maxTestReply[0].embeds[0];
 
 			if (testReply[0].warnings) warnings += `${testReply[0].warnings}\n`;
 
 			damageVals = [testReply[0].total, testReply[0].minrollTotal, testReply[0].maxrollTotal];
-			maxDamageVals = [maxTestReply[0].total, maxTestReply[0].minrollTotal, maxTestReply[0].maxrollTotal];
 
 		}
 		else {
 
 			testEmbed = testReply.embeds[0];
-			maxTestEmbed = maxTestReply.embeds[0];
 			damageVals = [testReply.total, testReply.minrollTotal, testReply.maxrollTotal];
-			maxDamageVals = [maxTestReply.total, maxTestReply.minrollTotal, maxTestReply.maxrollTotal];
 
 			if (testReply.warnings) warnings += `${testReply.warnings}\n`;
 		}
@@ -1280,6 +1281,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 		enemyAttribute = testReply[0].enemyAttribute;
 		enemyClass = testReply[0].enemyClass;
+
 		enemyClassEmoji = testReply[0].enemyClassEmoji;
 
 		debugDesc +=  `enemyHp: ${minEnemyHp},\naccReducedHp: ${accReducedHp},\naccReducedHp > enemyHp?: ${accReducedHp > minEnemyHp},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
@@ -1364,8 +1366,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 async function multiEnemy (servant, argStr, servantId, matches) {
 
-	let baseStr, enemyCmds, reply, refund = false, replyEmbed = {fields: []};
-	let minrollTotalRefund = 0, maxrollTotalRefund = 0, minrollTotalStars = 0, maxrollTotalStars = 0, minrollTotalDamage = 0, totalDamage = 0, maxrollTotalDamage = 0, warnings = '';
+	let baseStr, enemyCmds, reply, refund = false, replyEmbed = {fields: []}, warnings = '';
 	let enemyFields = [], showEnemyFields = false;
 	let waves = [];
 
@@ -1377,7 +1378,7 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 	argStr = argStr.toLowerCase();
 	baseStr = argStr.split('--enemy=')[0].split('--card=')[0];
 	argStr = ` ${argStr}`;
-	[_, ...enemyCmds] = argStr.split(/\s*(?=--enemy=\d+\s*)/);
+	[, ...enemyCmds] = argStr.split(/\s*(?=--enemy=\d+\s*)/);
 
 	let enemies = Array(9).fill().map(() => ({command: `${baseStr} `, count: false}));
 
@@ -1398,7 +1399,7 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 	}
 	else {
 
-		for (enemyCmd of enemyCmds) {
+		for (let enemyCmd of enemyCmds) {
 
 			let enemyNo = +enemyCmd.split(/--enemy=/)[1].split(/\s+/)[0] - 1;
 
@@ -1415,7 +1416,7 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 
 	enemies.forEach(enemy => enemy.command = enemy.command.replace(/--enemy=\d+/g, ''));
 
-	let npCmds = ''; let waveHasPassed = false;
+	let npCmds = '';
 
 	for (let i = 0; i < enemies.length; i++) {
 
@@ -1426,11 +1427,11 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 
 		if (Math.floor(Math.abs(i)/3) !== Math.floor((Math.abs(i)-1)/3)) npCmds = ''; //reset npCmds for subsequent wave
 
-		let testReply, testDamage, testRefund, minrollRefund = 0, maxrollRefund = 0, starFields, minrollMinStars = 0, maxrollMaxStars = 0, thisAvgStars = 0, value;
+		let testReply, testDamage, thisAvgStars = 0, value;
 
 		if (typeof servantId === 'undefined') return reply = `No match found for ${servant}`;
 
-		let [_, ...cardCmds] = enemy.command.split(/\s+(?=--card)/g);
+		let [, ...cardCmds] = enemy.command.split(/\s+(?=--card)/g);
 		cardCmds = cardCmds.join(' ');
 
 		/*
@@ -1460,11 +1461,6 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 				enemy.minrollRefund = testReply[0].minrollTotalRefund;
 				enemy.maxrollRefund = testReply[0].maxrollTotalRefund;
 
-				minrollTotalStars += minrollMinStars;
-				maxrollTotalStars += maxrollMaxStars
-				minrollTotalRefund += minrollRefund;
-				maxrollTotalRefund += maxrollRefund;
-
 				thisAvgStars = Math.floor((enemy.minrollMinStars + enemy.maxrollMaxStars)/2);
 
 				value = `\nRefund: **${enemy.minrollRefund.toFixed(2)}%** to **${enemy.maxrollRefund.toFixed(2)}%**\nStars: **${thisAvgStars}** (${enemy.minrollMinStars} - ${enemy.maxrollMaxStars})`;
@@ -1490,11 +1486,6 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 				enemy.minrollMinStars = testReply[2].minrollTotalMinStars;
 				enemy.maxrollMaxStars = testReply[2].maxrollTotalMaxStars;
 
-				minrollTotalStars += minrollMinStars;
-				maxrollTotalStars += maxrollMaxStars;
-				minrollTotalRefund += minrollRefund;
-				maxrollTotalRefund += maxrollRefund;
-
 				thisAvgStars = Math.floor((enemy.minrollMinStars + enemy.maxrollMaxStars)/2);
 
 				value = `\nRefund: **${enemy.minrollRefund.toFixed(2)}%** to **${enemy.maxrollRefund.toFixed(2)}%**\nStars: **${thisAvgStars}** (${enemy.minrollMinStars} - ${enemy.maxrollMaxStars})`;
@@ -1504,9 +1495,6 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 			enemy.totalDamage = testDamage[0];
 			enemy.minrollTotalDamage = testDamage[1];
 			enemy.maxrollTotalDamage = testDamage[2];
-			totalDamage += testDamage[0];
-			minrollTotalDamage += testDamage[1];
-			maxrollTotalDamage += testDamage[2];
 
 		}
 
@@ -1598,7 +1586,7 @@ async function wikia (search) {
 
 	search = search.join(' ');
 
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 
 		https.get('https://www.google.com/search?q=site%3Afategrandorder.fandom.com+' + search.replace(/ /g, '+'), function(res) {
 
@@ -1610,7 +1598,7 @@ async function wikia (search) {
 
 			});
 
-			res.on('end', _ => {
+			res.on('end', () => {
 
 				document = (new JSDOM(data, {pretendToBeVisual: true})).window.document;
 
@@ -1638,7 +1626,7 @@ async function bing (search) {
 
 	search = search.join(' ');
 
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 
 		https.get('https://www.bing.com/search?q=' + search.replace(/ /g, '+'), function(res) {
 
@@ -1650,7 +1638,7 @@ async function bing (search) {
 
 			});
 
-			res.on('end', _ => {
+			res.on('end', () => {
 
 				({document} = (new JSDOM(data, {pretendToBeVisual: true})).window);
 
@@ -1672,89 +1660,90 @@ async function bing (search) {
 }
 
 async function parseCalculationString(s) {
-    // --- Parse a calculation string into an array of numbers and operators
-    var calculation = [],
-        current = '';
-    for (var i = 0, ch; ch = s.charAt(i); i++) {
-        if ('^*/+-'.indexOf(ch) > -1) {
-            if (current == '' && ch == '-') {
-                current = '-';
-            } else {
-                calculation.push(parseFloat(current), ch);
-                current = '';
-            }
-        } else {
-            current += s.charAt(i);
-        }
-    }
-    if (current != '') {
-        calculation.push(parseFloat(current));
-    }
-    return calculation;
+	// --- Parse a calculation string into an array of numbers and operators
+	var calculation = [],
+		current = '';
+	for (var i = 0, ch; (ch = s.charAt(i)); i++) {
+		if ('^*/+-'.indexOf(ch) > -1) {
+			if (current == '' && ch == '-') {
+				current = '-';
+			} else {
+				calculation.push(parseFloat(current), ch);
+				current = '';
+			}
+		} else {
+			current += s.charAt(i);
+		}
+	}
+	if (current != '') {
+		calculation.push(parseFloat(current));
+	}
+	return calculation;
 }
 
 async function calculate(s) {
 
-	const calc = parseCalculationString(s.join(''));
+	let calc = parseCalculationString(s.join(''));
 
-    // --- Perform a calculation expressed as an array of operators and numbers
-    var ops = [{'^': (a, b) => Math.pow(a, b)},
-               {'*': (a, b) => a * b, '/': (a, b) => a / b},
-               {'+': (a, b) => a + b, '-': (a, b) => a - b}],
-        newCalc = [],
-        currentOp;
-    for (var i = 0; i < ops.length; i++) {
-        for (var j = 0; j < calc.length; j++) {
-            if (ops[i][calc[j]]) {
-                currentOp = ops[i][calc[j]];
-            } else if (currentOp) {
-                newCalc[newCalc.length - 1] = 
+	// --- Perform a calculation expressed as an array of operators and numbers
+	var ops = [{'^': (a, b) => Math.pow(a, b)},
+			{'*': (a, b) => a * b, '/': (a, b) => a / b},
+			{'+': (a, b) => a + b, '-': (a, b) => a - b}],
+		newCalc = [],
+		currentOp;
+	for (var i = 0; i < ops.length; i++) {
+		for (var j = 0; j < calc.length; j++) {
+			if (ops[i][calc[j]]) {
+				currentOp = ops[i][calc[j]];
+			} else if (currentOp) {
+				newCalc[newCalc.length - 1] = 
                     currentOp(newCalc[newCalc.length - 1], calc[j]);
-                currentOp = null;
-            } else {
-                newCalc.push(calc[j]);
-            }
-        }
-        calc = newCalc;
-        newCalc = [];
-    }
-    if (calc.length > 1) {
-        console.log('Error: unable to resolve calculation: ' + calc);
-        return calc;
-    } else {
-        return calc[0];
-    }
+				currentOp = null;
+			} else {
+				newCalc.push(calc[j]);
+			}
+		}
+		calc = newCalc;
+		newCalc = [];
+	}
+	if (calc.length > 1) {
+		console.log('Error: unable to resolve calculation: ' + calc);
+		return calc;
+	} else {
+		return calc[0];
+	}
 }
 
 /*
  * The above two functions (viz. `parseCalculationString` and `calculate`) have been taken and slightly modified from https://stackoverflow.com/a/32292728, written by 'Stuart'.
  */
 
+// eslint-disable-next-line no-unused-vars
 async function star_gen_table(star_drop_chance, hits) {
 
-    const guaranteed_stars = Math.floor(star_drop_chance);
-    const extra_star_chance = star_drop_chance - guaranteed_stars;
+	const guaranteed_stars = Math.floor(star_drop_chance);
+	const extra_star_chance = star_drop_chance - guaranteed_stars;
 
-    const prob_distribution_table = Array(hits).fill(0).map(() => Array(hits * 3 + 1).fill(0));
+	const prob_distribution_table = Array(hits).fill(0).map(() => Array(hits * 3 + 1).fill(0));
 
-    prob_distribution_table[0, guaranteed_stars] = 1 - extra_star_chance;
-    prob_distribution_table[0, guaranteed_stars + 1] = extra_star_chance;
+	prob_distribution_table[0, guaranteed_stars] = 1 - extra_star_chance;
+	prob_distribution_table[0, guaranteed_stars + 1] = extra_star_chance;
 
-    for (let i = 1; i < hits; i++) {
+	for (let i = 1; i < hits; i++) {
 
-        for (let j = 0; j < i + 1; j++) {
+		for (let j = 0; j < i + 1; j++) {
 
-            const base_chance = prob_distribution_table[i-1, guaranteed_stars * i + j] * (1-extra_star_chance);
-            const extra_chance = prob_distribution_table[i-1, guaranteed_stars * i + j] * (extra_star_chance);
+			const base_chance = prob_distribution_table[i-1, guaranteed_stars * i + j] * (1-extra_star_chance);
+			const extra_chance = prob_distribution_table[i-1, guaranteed_stars * i + j] * (extra_star_chance);
 
-            prob_distribution_table[i, guaranteed_stars * (i+1) + j] += base_chance;
-            prob_distribution_table[i, guaranteed_stars * (i+1) + j + 1] += extra_chance;
+			prob_distribution_table[i, guaranteed_stars * (i+1) + j] += base_chance;
+			prob_distribution_table[i, guaranteed_stars * (i+1) + j + 1] += extra_chance;
 
-        }
-    }
+		}
+	}
 
 	console.log(prob_distribution_table);
-    return prob_distribution_table;
+	return prob_distribution_table;
 
 }
 
@@ -1773,12 +1762,13 @@ async function star_gen_table(star_drop_chance, hits) {
 
 }*/
 
+// eslint-disable-next-line no-unused-vars
 async function starTable (starChance, hits) {
 
 	const guaranteedStars = Math.floor(starChance);
 	const extraChance = starChance - guaranteedStars;
 	const table = Array(hits * 3 + 1).fill(0); //e.g. Jack has 5 hits so 16 different outcomes (0..15 stars)
-console.log(starChance, guaranteedStars, extraChance);
+	console.log(starChance, guaranteedStars, extraChance);
 	for (let i = 1; i <= hits; i++) {
 
 		let baseStars = i * guaranteedStars;
@@ -1814,76 +1804,79 @@ let facts = [];
 
 async function factorial (n) {
 
-  if (n === 0 || n === 1)
-    return 1;
+	if (n === 0 || n === 1)
+		return 1;
 
-  if (facts[n] > 0)
-    return facts[n];
+	if (facts[n] > 0)
+		return facts[n];
 
-  return facts[n] = factorial(n-1) * n;
+	return facts[n] = factorial(n-1) * n;
 
 }
 
 module.exports = exports = function commandMap () {
 
-	emojis = emojiArray.map(emoji => ({name: emoji.name, id: emoji.id, toString() { return `<:${this.name}:${this.id}>`}}));
+	emojis = emojiArray.map(emoji => ({name: emoji.name, id: emoji.id, toString() { return `<:${this.name}:${this.id}>`;}}));
 
 	return new Map()
-	.set('test', test)
-	.set('t', test)
-	.set('chain', chain)
-	.set('multiEnemy', multiEnemy)
-	.set('fq', freeQuestsCalc)
-	.set('f', freeQuestsCalc)
-	.set('xmas', xmas)
-	.set('x', xmas)
-	.set('wikia', wikia)
-	.set('w', wikia)
-	.set('google', bing)
-	.set('bing', bing)
-	.set('search', bing)
-	.set('math', calculate)
-	.set('calc', calculate)
-	.set('chargers', async () => ({ content: '<https://docs.google.com/spreadsheets/d/14enWHBWAjGS4t-ChoGOTpdRSjXmeW0UgvMtEQMTsr_I>' }))
-	.set('help', help)
-	.set('h', help)
-	.set('getnames', getnames)
-	.set('g', getnames)
-	.set('addname', addname)
-	.set('a', addname)
-	.set('starz', async () => ({ content: '<https://fategrandorder.fandom.com/wiki/Wolfgang_Amadeus_Mozart>' }))
-	.set('refund', async () => ({ content: 'https://imgur.com/lO1UGGU' }))
-	.set('junao', async () => ({
-		embeds : [{
-			title: 'Junao/Waver',
-			description: 'https://imgur.com/IAYH9Vb',
-		},
-		{
-			title: 'Junao/Merlin',
-			description: 'https://imgur.com/eA0YLIQ',
-		}],
-		name: 'junao'
-	}))
-	.set('commands', async () => {
-		let replyDesc = `\* test (t)		: test servant damage
-		\* fq (f)		: test servants on free quests
-		\* chargers	: view servants with on-demand np gauge
-		\* help	(h)	: help for !test
-		\* getnames(g)	: get nicknames for a servant
-		\* math	(calc)	: \`+ - * / ^\` (no parens)
-		\* wikia (w)	: search wikia using google
-		\* google (bing, search)	: search query with bing
-		\* junao	: bring up np1/np5 junao+waver|merlin calc
-		\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
-		\* commands	: haha recursion`;
-		reply = {
-			embeds: [{
-				title: '__Commands__',
-				description: replyDesc
+		.set('test', test)
+		.set('t', test)
+		.set('chain', chain)
+		.set('multiEnemy', multiEnemy)
+		.set('fq', freeQuestsCalc)
+		.set('f', freeQuestsCalc)
+		.set('xmas', xmas)
+		.set('x', xmas)
+		.set('wikia', wikia)
+		.set('w', wikia)
+		.set('google', bing)
+		.set('bing', bing)
+		.set('search', bing)
+		.set('math', calculate)
+		.set('calc', calculate)
+		.set('chargers', async () => ({ content: '<https://docs.google.com/spreadsheets/d/14enWHBWAjGS4t-ChoGOTpdRSjXmeW0UgvMtEQMTsr_I>' }))
+		.set('help', help)
+		.set('h', help)
+		.set('getnames', getnames)
+		.set('g', getnames)
+		.set('addname', addname)
+		.set('a', addname)
+		.set('starz', async () => ({ content: '<https://fategrandorder.fandom.com/wiki/Wolfgang_Amadeus_Mozart>' }))
+		.set('refund', async () => ({ content: 'https://imgur.com/lO1UGGU' }))
+		.set('junao', async () => ({
+			embeds : [{
+				title: 'Junao/Waver',
+				description: 'https://imgur.com/IAYH9Vb',
+			},
+			{
+				title: 'Junao/Merlin',
+				description: 'https://imgur.com/eA0YLIQ',
 			}],
-			name: 'commands'
-		};
-		return reply;
-	})
+			name: 'junao'
+		}))
+		.set('commands', async () => {
+			
+			let replyDesc = `\\* test (t)		: test servant damage
+		\\* fq (f)		: test servants on free quests
+		\\* chargers	: view servants with on-demand np gauge
+		\\* help	(h)	: help for !test
+		\\* getnames(g)	: get nicknames for a servant
+		\\* math	(calc)	: \`+ - * / ^\` (no parens)
+		\\* wikia (w)	: search wikia using google
+		\\* google (bing, search)	: search query with bing
+		\\* junao	: bring up np1/np5 junao+waver|merlin calc
+		\\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
+		\\* commands	: haha recursion`;
 
+			let reply = {
+				embeds: [{
+					title: '__Commands__',
+					description: replyDesc
+				}],
+				name: 'commands'
+			};
+
+			return reply;
+
+		});
 };

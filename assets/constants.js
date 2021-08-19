@@ -59,7 +59,7 @@ const shorthands = `__Shorthands__:
 \t**supergrail/hyper/superer**: level120 fou2000
 __Other__:
 \t**#**: note/comment - anything that follows this will be ignored
-\t**/\\\*...\\\*/**: anything between these will be ignored (can be used inline)`;
+\t**/\\*...\\*/**: anything between these will be ignored (can be used inline)`;
 
 const helpPages = { testArgs, cardArgs, nonDmgArgs, waveArgs, shorthands };
 const prefix = '!';

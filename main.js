@@ -5,9 +5,9 @@ const config = { BOT_TOKEN: process.env.BOT_TOKEN };
 client.on('ready', () => {
 
 	console.info(`Logged in as ${client.user.tag}!`);
-	client.user.setActivity(`!help`, {
-        type: "WATCHING",
-      });
+	client.user.setActivity('!help', {
+		type: 'WATCHING',
+	});
 });
 
 client.on('messageCreate', messageCreateHandler);

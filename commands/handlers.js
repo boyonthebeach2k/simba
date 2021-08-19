@@ -4,7 +4,7 @@ const commands = require('../commands/commands.js')();
 let emojis = require('../assets/emojis.json');
 
 emojis = [emojis.find(e=>e.name==='gateofsnekked'), emojis.find(e=>e.name==='coronasnekfacethatiyoinkedfromga')]
-.map(emoji => ({ name: emoji.name, id: emoji.id, toString () { return `<:${this.name}:${this.id}>` } }));
+	.map(emoji => ({ name: emoji.name, id: emoji.id, toString () { return `<:${this.name}:${this.id}>`; } }));
 
 async function messageCreateHandler (message) {
 
@@ -49,7 +49,7 @@ async function messageCreateHandler (message) {
 
 			}
 			if (Math.floor(Math.random() * 10) >= 8)
-				if (reply[0].hasOwnProperty('embeds'))
+				if (Object.prototype.hasOwnProperty.call(reply[0],'embeds'))
 					reply[0].embeds[0].title = emojis.find(e=>e.name==='gateofsnekked').toString();
 
 			let embeds = [];
@@ -63,7 +63,7 @@ async function messageCreateHandler (message) {
 		else if (reply.embeds != undefined) {
 
 			if (Math.floor(Math.random() * 100) >= 92)
-				if (reply.hasOwnProperty('embeds'))
+				if (Object.prototype.hasOwnProperty.call(reply,'embeds'))
 					reply.embeds[0].title = emojis.find(e=>e.name==='gateofsnekked').toString();
 
 		}
@@ -81,9 +81,9 @@ async function messageCreateHandler (message) {
 				{
 					type: 1,
 					components: [
-						{ type: 2, label: "Damage", style: 2, custom_id: "damageEmbed" },
-						...(reply.refund ? [{ type: 2, label: "NP Refund", style: 2, custom_id: "npGainEmbed" }, { type: 2, label: "Stars Dropped", style: 2, custom_id: "starGenEmbed" }] : []),
-						{ type: 2, label: "Verbose Calc", style: 2, custom_id: "verboseEmbed" }
+						{ type: 2, label: 'Damage', style: 2, custom_id: 'damageEmbed' },
+						...(reply.refund ? [{ type: 2, label: 'NP Refund', style: 2, custom_id: 'npGainEmbed' }, { type: 2, label: 'Stars Dropped', style: 2, custom_id: 'starGenEmbed' }] : []),
+						{ type: 2, label: 'Verbose Calc', style: 2, custom_id: 'verboseEmbed' }
 					]
 		
 				}
@@ -101,7 +101,7 @@ async function messageCreateHandler (message) {
 			time: 30000
 		});
 
-		setTimeout(() => replyEmbed.edit({ embeds: replyEmbed.embeds, components: [{type:1,components:replyEmbed.components[0].components.map(c=>{c.disabled=true;return c})}]}), 30000);
+		setTimeout(() => replyEmbed.edit({ components: [{type:1,components:replyEmbed.components[0].components.map(c=>{c.disabled=true;return c;})}]}), 30000);
 
 		collector.on('collect', async interaction => {
 

@@ -1747,7 +1747,7 @@ async function parseCalculationString(s) {
 
 async function calculate(s) {
 
-	let calc = parseCalculationString(s.join(''));
+	let calc = await parseCalculationString(s.join(''));
 
 	// --- Perform a calculation expressed as an array of operators and numbers
 	var ops = [{'^': (a, b) => Math.pow(a, b)},

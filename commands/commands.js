@@ -201,6 +201,74 @@ async function xmas (restArgs) {
 
 }
 
+async function gf2Final (restArgs) {
+
+	let argStr, servant, reply;
+
+	try {
+		[servant, argStr] = restArgs;
+
+		if (servant == undefined) {
+
+			reply = 'haha noob :WoahWheeze:';
+
+		}
+		else {
+
+			let matches;
+
+			restArgs = restArgs.slice(2).join(' ').split('#')[0].replace(/\/\*[\s\S]*?(\*\/)/g, '');
+
+			matches = restArgs.match(/([bqa]|(np)){3}/g);
+
+			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
+
+			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
+			let enemyStr = '';
+			let baseStr, enemyStrs;
+
+			argStr = argStr.replace(/--wave=/g, '* --wave=') + ' * ';
+
+			let waveCmdStr = (' ' + argStr).split(/\s*(?=--wave=\d+)/g).slice(1).join(' ');
+			let waveCmds = argStr.match(/--wave=\d+[^*]*(?=\s+\*)/g) ?? [];
+
+			argStr = argStr.replace(waveCmdStr, '');
+			[baseStr, ...enemyStrs] = (' ' + argStr).split(/\s*(?=--enemy=\d+)/g);
+			enemyStrs = enemyStrs.reduce((acc, val) => acc + ' ' + val, '');
+
+			let tmpAry = Array.from(waveCmds);
+
+			waveCmds = Array(3).fill().map(()=>({command: ''}));
+
+			for (let wave of tmpAry) {
+
+				waveCmds[wave.split('wave=')[1].split(' ')[0] - 1].command = wave.split(/wave=\d+\s+/g)[1];
+
+			}
+
+			enemyStr += ` --enemy=1 --sky --saber --name=Shaking Ghost --hp=20845 ${waveCmds[0].command} `;
+			enemyStr += ` --enemy=2 --sky --saber --name=Absent-Minded Ghost --hp=11026 ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
+			enemyStr += ` --enemy=3 --sky --saber --name=Absent-Minded Ghost --hp=11026 ${waveCmds[0].command.replace(/--fr=\d+/g, '')} `;
+			enemyStr += ` --enemy=4 --sky --saber --name=Shaking Ghost --hp=24788 ${waveCmds[1].command} `;
+			enemyStr += ` --enemy=5 --sky --saber --name=Shaking Ghost --hp=24788 ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
+			enemyStr += ` --enemy=6 --earth --saber --name=Glasses God --hp=65100 ${waveCmds[1].command.replace(/--fr=\d+/g, '')} `;
+			enemyStr += ` --enemy=7 --earth --saber --name=Siegfried Megane --hp=140976 ${waveCmds[2].command} `;
+			enemyStr += ` --enemy=8 --earth --saber --name=Sigurd Megane --hp=81360 ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
+			enemyStr += ` --enemy=9 --man --saber --name=Gilles Saber --hp=76290 ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
+
+			reply = await multiEnemy(servant, baseStr + ' ' + enemyStr + ' ' + enemyStrs, servantId, matches);
+		}
+
+	}
+	catch (err) {
+		console.log(err);
+		reply = { content: err };
+	}
+
+	return reply;
+
+}
+
 async function help (_, message) {
 
 	const embedMessage = await message.channel.send({
@@ -1827,6 +1895,8 @@ module.exports = exports = function commandMap () {
 		.set('f', freeQuestsCalc)
 		.set('xmas', xmas)
 		.set('x', xmas)
+		.set('gf2', gf2Final)
+		.set('g', gf2Final)
 		.set('wikia', wikia)
 		.set('w', wikia)
 		.set('google', bing)
@@ -1838,7 +1908,6 @@ module.exports = exports = function commandMap () {
 		.set('help', help)
 		.set('h', help)
 		.set('getnames', getnames)
-		.set('g', getnames)
 		.set('addname', addname)
 		.set('a', addname)
 		.set('starz', async () => ({ content: '<https://fategrandorder.fandom.com/wiki/Wolfgang_Amadeus_Mozart>' }))
@@ -1860,12 +1929,13 @@ module.exports = exports = function commandMap () {
 		\\* fq (f)		: test servants on free quests
 		\\* chargers	: view servants with on-demand np gauge
 		\\* help	(h)	: help for !test
-		\\* getnames(g)	: get nicknames for a servant
+		\\* getnames	: get nicknames for a servant
 		\\* math	(calc)	: \`+ - * / ^\` (no parens)
 		\\* wikia (w)	: search wikia using google
 		\\* google (bing, search)	: search query with bing
 		\\* junao	: bring up np1/np5 junao+waver|merlin calc
 		\\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
+		\\* gf2 (g)	: calc gf2 final garden node (example !g nero wave3 a30)
 		\\* commands	: haha recursion`;
 
 			let reply = {

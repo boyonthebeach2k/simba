@@ -1728,7 +1728,7 @@ async function parseCalculationString(s) {
 	var calculation = [],
 		current = '';
 	for (var i = 0, ch; (ch = s.charAt(i)); i++) {
-		if ('^*/+-'.indexOf(ch) > -1) {
+		if ('^*/+-%'.indexOf(ch) > -1) {
 			if (current == '' && ch == '-') {
 				current = '-';
 			} else {
@@ -1750,7 +1750,7 @@ async function calculate(s) {
 	let calc = await parseCalculationString(s.join(''));
 
 	// --- Perform a calculation expressed as an array of operators and numbers
-	var ops = [{'^': (a, b) => Math.pow(a, b)},
+	var ops = [{'^': (a, b) => Math.pow(a, b), '%': (a, b) => a % b},
 			{'*': (a, b) => a * b, '/': (a, b) => a / b},
 			{'+': (a, b) => a + b, '-': (a, b) => a - b}],
 		newCalc = [],
@@ -1774,7 +1774,8 @@ async function calculate(s) {
 		console.log('Error: unable to resolve calculation: ' + calc);
 		return calc;
 	} else {
-		return calc[0];
+		console.log(calc[0]);
+		return `${calc[0]}`;
 	}
 }
 
@@ -1926,7 +1927,7 @@ module.exports = exports = function commandMap () {
 		\\* chargers	: view servants with on-demand np gauge
 		\\* help	(h)	: help for !test
 		\\* getnames	: get nicknames for a servant
-		\\* math	(calc)	: \`+ - * / ^\` (no parens)
+		\\* math	(calc)	: \`+ - * / ^ %\` (no parens)
 		\\* wikia (w)	: search wikia using google
 		\\* google (bing, search)	: search query with bing
 		\\* junao	: bring up np1/np5 junao+waver|merlin calc

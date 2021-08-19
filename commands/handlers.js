@@ -98,10 +98,10 @@ async function messageCreateHandler (message) {
 				}
 				return true;
 			},
-			time: 30000
+			time: 300000
 		});
 
-		setTimeout(() => replyEmbed.edit({ components: [{type:1,components:replyEmbed.components[0].components.map(c=>{c.disabled=true;return c;})}]}), 30000);
+		setTimeout(() => replyEmbed.edit({ components: [{type:1,components:replyEmbed.components[0].components.map(c=>{c.disabled=true;return c;})}]}), 300000);
 
 		collector.on('collect', async interaction => {
 

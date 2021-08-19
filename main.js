@@ -1,6 +1,6 @@
 const client = new (require('discord.js')).Client({ intents: 32265, partials: ['CHANNEL', 'MESSAGE'] });//[Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.DIRECT_MESSAGES] });
 const { messageCreateHandler } = require('./commands/handlers');
-const TOKEN = (process.env.ENV === 'DEV') ? process.env.BOT_TOKEN : process.env.DEV_TOKEN;
+const TOKEN = (process.env.ENV === 'DEV') ? process.env.DEV_TOKEN : process.env.BOT_TOKEN;
 
 client.on('ready', () => {
 

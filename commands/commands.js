@@ -149,10 +149,8 @@ async function xmas (restArgs) {
 
 			let matches;
 
-			restArgs = restArgs.slice(2).join(' ').split('#')[0].replace(/\/\*[\s\S]*?(\*\/)/g, '');
-
+			restArgs = restArgs.slice().join(' ').split('#')[0].replace(/\/\*[\s\S]*?(\*\/)/g, '');
 			matches = restArgs.match(/([bqa]|(np)){3}/g);
-
 			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
 
 			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
@@ -217,10 +215,8 @@ async function gf2Final (restArgs) {
 
 			let matches;
 
-			restArgs = restArgs.slice(2).join(' ').split('#')[0].replace(/\/\*[\s\S]*?(\*\/)/g, '');
-
+			restArgs = restArgs.slice(1).join(' ').split('#')[0].replace(/\/\*[\s\S]*?(\*\/)/g, '');
 			matches = restArgs.match(/([bqa]|(np)){3}/g);
-
 			argStr = restArgs.replace(/\|/g, '').replace(/([A-z])(-?\d)/g, '$1=$2').replace(/([a-z]+)/gi, '--$1');
 
 			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
@@ -233,6 +229,7 @@ async function gf2Final (restArgs) {
 			let waveCmds = argStr.match(/--wave=\d+[^*]*(?=\s+\*)/g) ?? [];
 
 			argStr = argStr.replace(waveCmdStr, '');
+
 			[baseStr, ...enemyStrs] = (' ' + argStr).split(/\s*(?=--enemy=\d+)/g);
 			enemyStrs = enemyStrs.reduce((acc, val) => acc + ' ' + val, '');
 
@@ -255,7 +252,6 @@ async function gf2Final (restArgs) {
 			enemyStr += ` --enemy=7 --earth --saber --name=Siegfried Megane --hp=140976 ${waveCmds[2].command} `;
 			enemyStr += ` --enemy=8 --earth --saber --name=Sigurd Megane --hp=81360 ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
 			enemyStr += ` --enemy=9 --man --saber --name=Gilles Saber --hp=76290 ${waveCmds[2].command.replace(/--fr=\d+/g, '')} `;
-
 			reply = await multiEnemy(servant, baseStr + ' ' + enemyStr + ' ' + enemyStrs, servantId, matches);
 		}
 
@@ -1478,7 +1474,7 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 		}
 	}
 
-	if (argStr.includes('--v') || argStr.includes('--verbose')) {
+	if (argStr.includes('--v') || argStr.includes('--verbose') || baseStr.includes('--v') || baseStr.includes('--verbose')) {
 		showEnemyFields = true;
 	}
 

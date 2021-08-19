@@ -1,1 +1,1 @@
-worker: PORT=5000 npm run ${ENV:-start}
+worker: PORT=5000 npm start

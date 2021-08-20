@@ -27,10 +27,18 @@ async function messageCreateHandler (message) {
 	[command, ...restArgs] = commandBody.toLowerCase().split(/\s+/);
 	command = command.toLowerCase();
 
-	if (commands.has(command))
+	if (commands.has(command)) {
+
 		reply = await commands.get(command)(restArgs, message);
-	else
+
+	}
+	else {
+
+		if (prefix.startsWith('.')) return;
+
 		reply = { content: `"${command}" not recognised!` };
+
+	}
 
 	if (reply) {
 

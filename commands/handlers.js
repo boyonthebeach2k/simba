@@ -20,7 +20,12 @@ async function messageCreateHandler (message) {
 	if (!message.content.startsWith(_prefix) && message.guild !== null)
 		return;
 	
-	let commandBody = message.guild === null ? message.content : message.content.slice(_prefix.length).trim(), reply, command, restArgs;
+	let commandBody, reply, command, restArgs;
+
+	if (message.guild !== null)
+		commandBody =  message.content.slice(_prefix.length).trim();
+	else
+		commandBody = message.content.startsWith(_prefix) ? message.content.slice(_prefix.length).trim() : message.content;
 
 	if (commandBody.length == 0) return;
 

@@ -89,6 +89,8 @@ async function freeQuestsCalc (restArgs) {
 			let enemyStr = '';
 			let baseStr, enemyStrs;
 
+			if (typeof war === 'undefined') return reply = ({ content: `${fq} not found (try using html id)`});
+
 			argStr = argStr.replace(/--wave=/g, '* --wave=') + ' * ';
 
 			let waveCmdStr = (' ' + argStr).split(/\s*(?=--wave=\d+)/g).slice(1).join(' ');

@@ -34,7 +34,7 @@ async function messageCreateHandler (message) {
 	}
 	else {
 
-		if (prefix.startsWith('.')) return;
+		if (_prefix.startsWith('.')) return;
 
 		reply = { content: `"${command}" not recognised!` };
 

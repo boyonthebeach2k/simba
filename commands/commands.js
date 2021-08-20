@@ -1935,7 +1935,8 @@ module.exports = exports = function commandMap () {
 		\\* junao	: bring up np1/np5 junao+waver|merlin calc
 		\\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
 		\\* gf2 (g)	: calc gf2 final garden node (example !g nero wave3 a30)
-		\\* commands	: haha recursion`;
+		\\* commands	: haha recursion
+		\\* [no prefix needed in DMs]`;
 
 			let reply = {
 				embeds: [{

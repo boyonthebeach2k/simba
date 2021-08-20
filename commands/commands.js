@@ -85,11 +85,12 @@ async function freeQuestsCalc (restArgs) {
 
 			let servantId = (+servant === +servant) ? +servant : Object.keys(nicknames).find(id => nicknames[id].includes(servant));
 			let war = Object.keys(freeQuests).find(section => Object.keys(freeQuests[section]).includes(fq));
+
+			if (typeof war === 'undefined') return reply = ({ content: `${fq} not found (try using html id)`});
+
 			let quest = freeQuests[war][fq];
 			let enemyStr = '';
 			let baseStr, enemyStrs;
-
-			if (typeof war === 'undefined') return reply = ({ content: `${fq} not found (try using html id)`});
 
 			argStr = argStr.replace(/--wave=/g, '* --wave=') + ' * ';
 

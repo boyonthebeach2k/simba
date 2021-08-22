@@ -281,8 +281,8 @@ async function help (_, message) {
 				components: [
 					{ type: 2, label: 'General', style: 2, custom_id: 'testArgs' },
 					{ type: 2, label: 'Cards', style: 2, custom_id: 'cardArgs' },
-					{ type: 2, label: 'Waves', style: 2, custom_id: 'nonDmgArgs' },
-					{ type: 2, label: 'Aux', style: 2, custom_id: 'waveArgs' },
+					{ type: 2, label: 'Waves', style: 2, custom_id: 'waveArgs' },
+					{ type: 2, label: 'Aux', style: 2, custom_id: 'nonDmgArgs' },
 					{ type: 2, label: 'Shorthands', style: 2, custom_id: 'shorthands' }
 				]
 	

@@ -88,8 +88,13 @@ async function messageCreateHandler (message) {
 
 		}
 
+		let embeds = [];
+
+		embeds = restArgs.some(word => /hp\d+/g.test(word)) ? reply.npGainEmbed.embeds : reply.damageEmbed.embeds;
+		embeds = restArgs.includes('v') ? reply.verboseEmbed.embeds : embeds;
+
 		const replyEmbed = await message.channel.send({
-			embeds: reply.damageEmbed.embeds,
+			embeds,
 			components: [
 				{
 					type: 1,

@@ -604,8 +604,6 @@ async function calc (servantId, argStr, servantName) {
 		default: cardType = 1;
 		}
 
-
-
 		let enemyClass = '', enemyAttribute = '';
 
 		for (const element of Object.keys(classList)) {

@@ -90,8 +90,8 @@ async function messageCreateHandler (message) {
 
 		let embeds = [];
 
-		embeds = restArgs.some(word => /hp\d+/g.test(word)) ? reply.npGainEmbed.embeds : reply.damageEmbed.embeds;
-		embeds = restArgs.includes('v') ? reply.verboseEmbed.embeds : embeds;
+		embeds = (restArgs.some(word => /hp\d+/g.test(word)) && reply.npGainEmbed) ? reply.npGainEmbed.embeds : reply.damageEmbed.embeds;
+		embeds = (restArgs.includes('v') && reply.verboseEmbed) ? reply.verboseEmbed.embeds : embeds;
 
 		const replyEmbed = await message.channel.send({
 			embeds,

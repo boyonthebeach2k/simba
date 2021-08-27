@@ -945,7 +945,7 @@ async function calc (servantId, argStr, servantName) {
 
 		if (args.enemyhp != null) {
 
-			let servantNpGain = f(servant.noblePhantasms[np].npGain.np[npLevel]), minNPRegen = 0, reducedHp = 0, maxReducedHp = 0, maxNPRegen = 0, enemyHp = f(args.enemyhp ?? 0);
+			let servantNpGain = f(servant.noblePhantasms[faceCard.toLowerCase()].npGain.np[npLevel]), minNPRegen = 0, reducedHp = 0, maxReducedHp = 0, maxNPRegen = 0, enemyHp = f(args.enemyhp ?? 0);
 			let descriptionString = '';
 			let cardNpValue = 0,enemyServerMod = 0, artsFirst = f((args.artsfirst) ? 1 : 0);
 			let isOverkill = 0, isMaxOverkill = 0, baseNPGain = 0, minrollTotalVal = f(0.9 * f(total - fD) + fD), maxrollTotalVal = f(1.099 * f(total - fD) + fD), overkillNo = 0, maxOverkillNo = 0;

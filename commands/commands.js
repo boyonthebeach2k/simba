@@ -350,7 +350,7 @@ async function addname (restArgs, message) {
 
 	let reply;
 
-	if (message.author.id === '677587347075760165' || message.author.id === '406537966161362955' || message.author.id === '200914311202209793' || message.author.id === '272691231883132928' || message.author.id === '455223550085693440') {
+	if (message.author.id === '677587347075760165' || message.author.id === '406537966161362955' || message.author.id === '357729894765035520' || message.author.id === '200914311202209793' || message.author.id === '272691231883132928' || message.author.id === '455223550085693440') {
 
 		let [id, ...nickname] = restArgs;
 		nickname = nickname.join(' ');

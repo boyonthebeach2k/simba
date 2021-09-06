@@ -350,7 +350,7 @@ async function addname (restArgs, message) {
 
 	let reply;
 
-	if (message.author.id === '677587347075760165' || message.author.id === '406537966161362955' || message.author.id === '357729894765035520' || message.author.id === '200914311202209793' || message.author.id === '272691231883132928' || message.author.id === '455223550085693440') {
+	if (process.env.AUTH_USERS.includes(message.author.id)) {
 
 		let [id, ...nickname] = restArgs;
 		nickname = nickname.join(' ');
@@ -1901,7 +1901,9 @@ module.exports = exports = function commandMap () {
 		.set('bing', bing)
 		.set('search', bing)
 		.set('math', calculate)
+		.set('m', calculate)
 		.set('calc', calculate)
+		.set('c', calculate)
 		.set('chargers', async () => ({ content: '<https://docs.google.com/spreadsheets/d/14enWHBWAjGS4t-ChoGOTpdRSjXmeW0UgvMtEQMTsr_I>' }))
 		.set('help', help)
 		.set('h', help)
@@ -1926,9 +1928,9 @@ module.exports = exports = function commandMap () {
 			let replyDesc = `\\* test (t)		: test servant damage
 		\\* fq (f)		: test servants on free quests
 		\\* chargers	: view servants with on-demand np gauge
-		\\* help	(h)	: help for !test
+		\\* help (h)	: help for !test
 		\\* getnames	: get nicknames for a servant
-		\\* math	(calc)	: \`+ - * / ^ %\` (no parens)
+		\\* math(m)/calc(c)	: \`+ - * / ^ %\` (no parens)
 		\\* wikia (w)	: search wikia using google
 		\\* google (bing, search)	: search query with bing
 		\\* junao	: bring up np1/np5 junao+waver|merlin calc

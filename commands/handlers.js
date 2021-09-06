@@ -45,7 +45,7 @@ async function messageCreateHandler (message) {
 
 	}
 
-	if (command.includes('noob'))
+	if (message.content.includes('noob'))
 		reply = { content: `no u ${emojis.find(e=>e.name==='coronasnekfacethatiyoinkedfromga')}` };
 
 	if (reply) {

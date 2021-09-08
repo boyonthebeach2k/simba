@@ -359,7 +359,7 @@ async function addname (restArgs, message) {
 		if (id in nicknames) {
 			if (!nicknames[id].includes(nickname)) {
 				nicknames[id].push(nickname);
-				require('fs').writeFileSync('../assets/nicknames.json', JSON.stringify(nicknames, null, 2));
+				require('fs').writeFileSync('./assets/nicknames.json', JSON.stringify(nicknames, null, 2));
 				reply = { content: `Set ${id}: ${nickname}` };
 			}
 		}

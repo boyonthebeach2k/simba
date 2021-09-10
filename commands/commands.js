@@ -1349,7 +1349,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 		enemyClassEmoji = testReply[0].enemyClassEmoji;
 
-		debugDesc +=  `enemyHp: ${minEnemyHp},\naccReducedHp: ${accReducedHp},\naccReducedHp > enemyHp?: ${accReducedHp > minEnemyHp},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
+		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\nenemyHp: ${minEnemyHp},\naccReducedHp: ${accReducedHp},\naccReducedHp > enemyHp?: ${accReducedHp > minEnemyHp},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
 
 		if (testReply[2]?.name === 'stars') {
 

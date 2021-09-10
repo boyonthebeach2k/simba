@@ -995,7 +995,7 @@ async function calc (servantId, argStr, servantName) {
 
 			for (let i = 0; i < hits.length; i++) {
 
-				let hit = hits[i], thisHitMinDamage = f(minrollTotalVal * f(hit) / f(100)), thisHitMaxDamage = Math.floor(f(maxrollTotalVal * f(hit) / f(100)));
+				let hit = hits[i], thisHitMinDamage = Math.floor(f(minrollTotalVal * f(hit) / f(100))), thisHitMaxDamage = Math.floor(f(maxrollTotalVal * f(hit) / f(100)));
 
 				reducedHp += thisHitMinDamage;
 				maxReducedHp += thisHitMaxDamage;

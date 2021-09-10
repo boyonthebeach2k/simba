@@ -1331,8 +1331,8 @@ async function chain (servantId, argStr, servantName, match) {
 		maxOverkillStarsNo += (maxTestReply[1]?.maxOverkillNo ?? 0);
 		minrollTotalRefund += (testReply[1]?.minNPRegen ?? 0);
 		maxrollTotalRefund += (maxTestReply[1]?.maxNPRegen ?? 0);
-		accReducedHp += (testReply[1]?.reducedHp ?? 0);
-		maxAccReducedHp += (maxTestReply[1]?.maxReducedHp ?? 0);
+		accReducedHp = (testReply[1]?.reducedHp ?? 0);
+		maxAccReducedHp = (maxTestReply[1]?.maxReducedHp ?? 0);
 
 		minEnemyHp -= accReducedHp;
 		maxEnemyHp -= maxAccReducedHp;

@@ -948,10 +948,12 @@ async function calc (servantId, argStr, servantName) {
 			let servantNpGain = f(servant.noblePhantasms[np].npGain[faceCard.toLowerCase()][npLevel]), minNPRegen = 0, reducedHp = 0, maxReducedHp = 0, maxNPRegen = 0, enemyHp = f(args.enemyhp ?? 0);
 			let descriptionString = '';
 			let cardNpValue = 0,enemyServerMod = 0, artsFirst = f((args.artsfirst) ? 1 : 0);
-			let isOverkill = 0, isMaxOverkill = 0, baseNPGain = 0, minrollTotalVal = f(0.9 * f(total - fD) + fD), maxrollTotalVal = f(1.099 * f(total - fD) + fD), overkillNo = 0, maxOverkillNo = 0;
+			let isOverkill = 0, isMaxOverkill = 0, baseNPGain = 0, minrollTotalVal = f(0.9 * f(total - fD) + fD), maxrollTotalVal = f(1.099 * f(total - fD) + fD), overkillNo = 0, maxOverkillNo = 0, currEnemyHp = 0;
 
 			if (args.reducedhp) reducedHp = args.reducedhp;
 			if (args.maxreducedhp) maxReducedHp = args.maxreducedhp;
+
+			currEnemyHp = enemyHp - reducedHp;
 
 			switch (`${(faceCard === 'NP') ? servant.noblePhantasms[np].card : faceCard.toLowerCase()}`) {
 			case 'arts': cardNpValue = 3; break;
@@ -999,8 +1001,8 @@ async function calc (servantId, argStr, servantName) {
 
 				reducedHp += thisHitMinDamage;
 				maxReducedHp += thisHitMaxDamage;
-				isOverkill = +(reducedHp >= enemyHp);
-				isMaxOverkill = +(maxReducedHp >= enemyHp);
+				isOverkill = +(reducedHp >= currEnemyHp);
+				isMaxOverkill = +(maxReducedHp >= currEnemyHp);
 				overkillNo += isOverkill;
 				maxOverkillNo += isMaxOverkill;
 
@@ -1010,7 +1012,7 @@ async function calc (servantId, argStr, servantName) {
 				minNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isOverkill)/2)) / 100;
 				maxNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isMaxOverkill)/2)) / 100;
 
-				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(enemyHp - reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
+				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(currEnemyHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
 
 			}
 
@@ -1044,6 +1046,8 @@ async function calc (servantId, argStr, servantName) {
 				maxNPRegen,
 				reducedHp,
 				maxReducedHp,
+				currEnemyHp,
+				enemyHp
 			};
 
 		}
@@ -1334,11 +1338,13 @@ async function chain (servantId, argStr, servantName, match) {
 		accReducedHp = (testReply[1]?.reducedHp ?? 0);
 		maxAccReducedHp = (maxTestReply[1]?.maxReducedHp ?? 0);
 
-		minEnemyHp -= accReducedHp;
-		maxEnemyHp -= maxAccReducedHp;
+		//minEnemyHp -= accReducedHp;
+		//maxEnemyHp -= maxAccReducedHp;
 
 		if (chain[i+1]?.np !== false) {
 
+			minEnemyHp -= accReducedHp;
+			maxEnemyHp -= maxAccReducedHp;
 			accReducedHp = 0;
 			maxAccReducedHp = 0;
 
@@ -1349,7 +1355,7 @@ async function chain (servantId, argStr, servantName, match) {
 
 		enemyClassEmoji = testReply[0].enemyClassEmoji;
 
-		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\nenemyHp: ${minEnemyHp},\naccReducedHp: ${accReducedHp},\naccReducedHp > enemyHp?: ${accReducedHp > minEnemyHp},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
+		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\naccReducedHp: ${accReducedHp},\n[enemyHp-accReducedHp]: ${minEnemyHp-accReducedHp},\n[accReducedHp > (enemyHp-accReducedHp)]?: ${accReducedHp > (minEnemyHp-accReducedHp)},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
 
 		if (testReply[2]?.name === 'stars') {
 

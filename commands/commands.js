@@ -1916,7 +1916,6 @@ module.exports = exports = function commandMap () {
 		.set('getnames', getnames)
 		.set('addname', addname)
 		.set('a', addname)
-		.set('<@!820986412898713630>', async () => ({ content: '<@820986412898713630> is NOOB' }))
 		.set('starz', async () => ({ content: '<https://fategrandorder.fandom.com/wiki/Wolfgang_Amadeus_Mozart>' }))
 		.set('refund', async () => ({ content: 'https://imgur.com/lO1UGGU' }))
 		.set('junao', async () => ({

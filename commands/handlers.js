@@ -17,6 +17,13 @@ async function messageCreateHandler (message) {
 	else
 		_prefix = prefix;
 
+	if (message.content === '<@!820986412898713630>') {
+
+		message.channel.send('<@!820986412898713630> is NOOB');
+		return;
+
+	}
+
 	if (!message.content.startsWith(_prefix) && message.guild !== null)
 		return;
 	

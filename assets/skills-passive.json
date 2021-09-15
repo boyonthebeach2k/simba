@@ -2452,5 +2452,32 @@
     "cardmod": {
       "quick": 12
     }
+  },
+  "321": {
+    "cardmod": {
+      "quick": 10
+    },
+    "critdamage": {
+      "arts": 10,
+      "buster": 10,
+      "quick": 10
+    },
+    "flatdamage": {
+      "value": 225
+    }
+  },
+  "322": {
+    "cardmod": {
+      "arts": 8,
+      "quick": 12
+    },
+    "flatdamage": {
+      "value": 225
+    }
+  },
+  "323": {
+    "cardmod": {
+      "buster": 4
+    }
   }
 }

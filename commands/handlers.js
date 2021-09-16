@@ -41,7 +41,16 @@ async function messageCreateHandler (message) {
 
 	if (commands.has(command)) {
 
-		reply = await commands.get(command)(restArgs, message);
+		try {
+
+			reply = await commands.get(command)(restArgs, message);
+
+		}
+		catch (e) {
+
+			reply = {content: 'Error: Malformed command.'};
+
+		}
 
 	}
 	else {

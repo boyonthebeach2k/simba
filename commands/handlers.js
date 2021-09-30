@@ -24,12 +24,12 @@ async function messageCreateHandler (message) {
 
 	}
 
-	if (!message.content.startsWith(_prefix) && message.guild !== null)
+	if ((!message.content.startsWith(_prefix)) && !(message.channel.id === '893112799771897906' || message.guild === null))
 		return;
 	
 	let commandBody, reply, command, restArgs;
 
-	if (message.guild !== null)
+	if (!(message.channel.id === '893112799771897906' || (message.guild === null)))
 		commandBody =  message.content.slice(_prefix.length).trim();
 	else
 		commandBody = message.content.startsWith(_prefix) ? message.content.slice(_prefix.length).trim() : message.content;
@@ -56,6 +56,7 @@ async function messageCreateHandler (message) {
 	else {
 
 		if (_prefix.startsWith('.')) return;
+		//if (message.channel.id === '893112799771897906') return;
 
 		reply = { content: `"${command}" not recognised!` };
 

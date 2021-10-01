@@ -56,7 +56,7 @@ async function messageCreateHandler (message) {
 	else {
 
 		if (_prefix.startsWith('.')) return;
-		//if (message.channel.id === '893112799771897906') return;
+		if (message.channel.id === '893112799771897906') return;
 
 		reply = { content: `"${command}" not recognised!` };
 

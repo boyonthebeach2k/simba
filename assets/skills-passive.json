@@ -2439,10 +2439,14 @@
   },
   "319": {
     "cardmod": {
-      "arts": 5
+      "arts": 5,
+      "buster": 0,
+      "quick": 0
     },
     "critdamage": {
-      "arts": 10
+      "arts": 10,
+      "buster": 0,
+      "quick": 0
     },
     "stargen": {
       "value": 10
@@ -2450,6 +2454,8 @@
   },
   "320": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 12
     }
   },
@@ -2478,6 +2484,29 @@
   "323": {
     "cardmod": {
       "buster": 4
+    }
+  },
+  "324": {
+    "cardmod": {
+      "arts": 10
+    },
+    "flatdamage": {
+      "value": 175
+    }
+  },
+  "325": {
+    "cardmod": {
+      "quick": 8
+    },
+    "critdamage": {
+      "arts": 8,
+      "buster": 8,
+      "quick": 8
+    }
+  },
+  "326": {
+    "cardmod": {
+      "quick": 12
     }
   }
 }

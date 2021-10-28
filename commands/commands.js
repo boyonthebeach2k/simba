@@ -309,6 +309,47 @@ async function help (_, message) {
 
 }
 
+async function getnps (restArgs) {
+	let servant = restArgs[0], title = `No matches found for ${servant}!`, description = '';
+	let nps;
+
+	if (+servant === +servant) {
+
+		title = `NPs for ${servant}:`;
+		nps = servants.find(s=>(s.collectionNo===parseInt(servant) && ('noblePhantasms' in s))).noblePhantasms;
+
+		for (let [setnp, np] of nps.entries()) {
+
+			description += `\n**snp${setnp}:**\n`;
+
+			for (const npFn in np.functions) {
+				if (np.functions[npFn].funcType.includes('damageNp')) {
+					description += emojis.find(e=>e.name===np.card);
+					np.functions[npFn].svals.forEach(e=>description+=(+e.Value/10)+'% ');
+					description += '\n';
+					break;
+				}
+			}
+		}
+	}
+	else {
+
+		description = 'Enter servant ID!';
+
+	}
+
+	const reply = {
+		embeds: [{
+			title,
+			description
+		}],
+		name: 'getnps'
+	};
+
+	return reply;
+
+}
+
 async function getnames (restArgs) {
 
 	let servant = restArgs[0], title = `No matches found for ${servant}!`, description = '';
@@ -390,6 +431,7 @@ async function calc (servantId, argStr, servantName) {
 			'--quickmod'			:	[Number],
 			'--extramod'			:	[Number],
 			'--str'					:	Number,
+			'--setnp'				:	Number,
 			'--ce'					:	Number,
 			'--fou'					:	Number,
 			'--totalattack'			:	Number,
@@ -499,6 +541,8 @@ async function calc (servantId, argStr, servantName) {
 			'--super'				:	'--supered',
 			'--superer'				:	'--supergrail',
 			'--hyper'				:	'--supergrail',
+			'--snp'					:	'--setnp',
+			'--esp'					:	'--extracardpower',
 
 			//Debug and internal
 			'--dump'				:	Boolean,
@@ -595,6 +639,10 @@ async function calc (servantId, argStr, servantName) {
 		if (args.str != null) {
 			if (args.str > 0) np = nps[nps.length - 1];
 			else np = nps[0];
+		}
+
+		if (args.setnp != null) {
+			np = nps[args.setnp];
 		}
 
 		switch (servant.noblePhantasms[np].card) {
@@ -1900,7 +1948,6 @@ module.exports = exports = function commandMap () {
 		.set('xmas', xmas)
 		.set('x', xmas)
 		.set('gf2', gf2Final)
-		.set('g', gf2Final)
 		.set('wikia', wikia)
 		.set('w', wikia)
 		.set('google', bing)
@@ -1913,7 +1960,12 @@ module.exports = exports = function commandMap () {
 		.set('chargers', async () => ({ content: '<https://docs.google.com/spreadsheets/d/14enWHBWAjGS4t-ChoGOTpdRSjXmeW0UgvMtEQMTsr_I>' }))
 		.set('help', help)
 		.set('h', help)
+		.set('list', getnps)
+		.set('l', getnps)
+		.set('getnps', getnps)
+		.set('getnp', getnps)
 		.set('getnames', getnames)
+		.set('g', getnames)
 		.set('addname', addname)
 		.set('a', addname)
 		.set('starz', async () => ({ content: '<https://fategrandorder.fandom.com/wiki/Wolfgang_Amadeus_Mozart>' }))
@@ -1935,13 +1987,14 @@ module.exports = exports = function commandMap () {
 		\\* fq (f)		: test servants on free quests
 		\\* chargers	: view servants with on-demand np gauge
 		\\* help (h)	: help for !test
-		\\* getnames	: get nicknames for a servant
+		\\* getnames (g)	: get nicknames for a servant
+		\\* getnps (list, l)	: get nps for a servant
 		\\* math(m)/calc(c)	: \`+ - * / ^ %\` (no parens)
 		\\* wikia (w)	: search wikia using google
 		\\* google (bing, search)	: search query with bing
 		\\* junao	: bring up np1/np5 junao+waver|merlin calc
 		\\* xmas (x)	: calc xmas final gold tag lotto node (example !x nero wave3 a30)
-		\\* gf2 (g)	: calc gf2 final garden node (example !g nero wave3 a30)
+		\\* gf2	: calc gf2 final garden node (example !g nero wave3 a30)
 		\\* commands	: haha recursion
 		\\* [no prefix needed in DMs]`;
 

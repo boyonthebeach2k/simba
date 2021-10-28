@@ -2,6 +2,8 @@ const testArgs = `__General arguments__:
 \t**level/lvl/l**: servant level (default: ungrailed level cap)
 \t**nplevel/np**: (1 to 5, default: np5)
 \t**str**: np strengthening (1 for str, 0 for not; default: na availability. str1 for astarte quick NP and faelot buster NP)
+\t**getnp/list/l**: lists nps for the given servant ID
+\t**setnp/snp: set np (e.g. snp1 for astarte buster) (like a more flexible str)
 \t**atkmod/a/atk**: atk up/down (put - in front of down values)
 \t**defmod/d**: def up/down
 \t**npmod/n**: np dmg up/down

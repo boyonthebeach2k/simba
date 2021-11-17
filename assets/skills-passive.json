@@ -3,14 +3,14 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 6
+      "quick": 6.0
     }
   },
   "2": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "3": {},
@@ -18,113 +18,113 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 6
+      "quick": 6.0
     }
   },
   "5": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "6": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "7": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     }
   },
   "8": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "9": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
-      "quick": 8
+      "buster": 12.0,
+      "quick": 8.0
     }
   },
   "10": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "11": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "12": {
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "13": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "14": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "15": {
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 300
+      "value": 300.0
     }
   },
   "16": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "17": {
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "18": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -132,7 +132,7 @@
   "19": {},
   "20": {
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "21": {},
@@ -141,22 +141,22 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     },
     "flatdamage": {
-      "value": 95
+      "value": 95.0
     }
   },
   "24": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "25": {},
@@ -164,31 +164,31 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "27": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     }
   },
   "28": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 100
+      "value": 100.0
     }
   },
   "29": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     }
   },
   "30": {
@@ -198,71 +198,71 @@
       "quick": 11.5
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "31": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "32": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
   },
   "33": {
     "cardmod": {
-      "arts": 4,
+      "arts": 4.0,
       "buster": 0,
       "quick": 0
     }
   },
   "34": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     }
   },
   "35": {
     "cardmod": {
-      "arts": 7,
+      "arts": 7.0,
       "buster": 0,
       "quick": 0
     }
   },
   "36": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
   },
   "37": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "38": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "39": {
     "stargen": {
-      "value": 4
+      "value": 4.0
     }
   },
   "40": {
@@ -272,7 +272,7 @@
   },
   "41": {
     "flatdamage": {
-      "value": 300
+      "value": 300.0
     },
     "stargen": {
       "value": 10.5
@@ -280,164 +280,164 @@
   },
   "42": {
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "43": {
     "stargen": {
-      "value": 4
+      "value": 4.0
     }
   },
   "44": {
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "46": {
     "stargen": {
-      "value": 4
+      "value": 4.0
     }
   },
   "47": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "48": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     }
   },
   "49": {
     "cardmod": {
       "arts": 0,
-      "buster": 10,
+      "buster": 10.0,
       "quick": 0
     }
   },
   "50": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "51": {
     "cardmod": {
       "arts": 0,
-      "buster": 2,
+      "buster": 2.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     }
   },
   "52": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "53": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     }
   },
   "54": {
     "cardmod": {
       "arts": 0,
-      "buster": 11,
+      "buster": 11.0,
       "quick": 0
     }
   },
   "55": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     }
   },
   "56": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "57": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     }
   },
   "58": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     }
   },
   "59": {},
   "60": {
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     }
   },
   "61": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
   },
   "62": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "63": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "64": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "65": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "66": {},
   "67": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -446,14 +446,14 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 2
+      "quick": 2.0
     }
   },
   "69": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "70": {},
@@ -462,19 +462,19 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "73": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "74": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
@@ -488,26 +488,26 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "77": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "78": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "79": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
@@ -516,69 +516,69 @@
   "81": {
     "cardmod": {
       "arts": 0,
-      "buster": 10,
+      "buster": 10.0,
       "quick": 0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "82": {
     "cardmod": {
       "arts": 0,
-      "buster": 4,
+      "buster": 4.0,
       "quick": 0
     }
   },
   "84": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "85": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "86": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "87": {
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     }
   },
   "88": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 100
+      "value": 100.0
     }
   },
   "89": {
     "cardmod": {
       "arts": 0,
-      "buster": 1,
+      "buster": 1.0,
       "quick": 0
     }
   },
@@ -586,29 +586,29 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "91": {
     "cardmod": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     },
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "92": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 6
+      "value": 6.0
     }
   },
   "93": {},
@@ -616,58 +616,58 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "95": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "96": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "97": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "98": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "99": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "100": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
@@ -676,23 +676,23 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "102": {},
   "103": {
     "cardmod": {
-      "arts": 4,
+      "arts": 4.0,
       "buster": 0,
       "quick": 0
     }
   },
   "104": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -701,43 +701,43 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 7
+      "quick": 7.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "106": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "107": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "108": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "109": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
       "value": 10.5
@@ -745,56 +745,56 @@
   },
   "110": {
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "111": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "112": {
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     },
     "stargen": {
-      "value": 6
+      "value": 6.0
     }
   },
   "113": {
     "cardmod": {
-      "arts": 11,
+      "arts": 11.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     }
   },
   "114": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
-      "quick": 11
+      "buster": 12.0,
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "115": {
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "116": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     }
   },
@@ -807,55 +807,55 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "119": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "120": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "121": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "122": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "123": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "124": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
       "value": 10.5
@@ -863,80 +863,80 @@
   },
   "125": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "126": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "127": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "128": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 230
+      "value": 230.0
     }
   },
   "129": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "130": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "131": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "132": {
     "cardmod": {
-      "arts": 5,
+      "arts": 5.0,
       "buster": 0,
       "quick": 0
     },
     "stargen": {
-      "value": 5
+      "value": 5.0
     }
   },
   "133": {
     "stargen": {
-      "value": 2
+      "value": 2.0
     }
   },
   "134": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
@@ -944,36 +944,36 @@
   "136": {},
   "137": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "138": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     }
   },
   "139": {
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "140": {},
   "141": {},
   "142": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "143": {},
@@ -981,47 +981,47 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     },
     "flatdamage": {
-      "value": 300
+      "value": 300.0
     }
   },
   "145": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "146": {
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "147": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "148": {
     "cardmod": {
       "arts": 0,
-      "buster": 2,
+      "buster": 2.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "150": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     }
@@ -1029,75 +1029,75 @@
   "153": {},
   "154": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "155": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     }
   },
   "156": {
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     }
   },
   "157": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "158": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "159": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 5
+      "quick": 5.0
     },
     "critdamage": {
-      "arts": 5,
-      "buster": 5,
-      "quick": 5
+      "arts": 5.0,
+      "buster": 5.0,
+      "quick": 5.0
     },
     "stargen": {
-      "value": 6
+      "value": 6.0
     }
   },
   "160": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "161": {
     "cardmod": {
       "arts": 0,
-      "buster": 5,
+      "buster": 5.0,
       "quick": 0
     }
   },
   "162": {
     "cardmod": {
       "arts": 0,
-      "buster": 3,
+      "buster": 3.0,
       "quick": 0
     }
   },
@@ -1105,25 +1105,25 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "164": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     },
     "stargen": {
       "value": 10.5
@@ -1133,24 +1133,24 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "166": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "167": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "169": {
@@ -1162,29 +1162,29 @@
   },
   "170": {
     "stargen": {
-      "value": 4
+      "value": 4.0
     }
   },
   "171": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "172": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "173": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     }
@@ -1192,36 +1192,36 @@
   "174": {
     "cardmod": {
       "arts": 0,
-      "buster": 4,
+      "buster": 4.0,
       "quick": 0
     }
   },
   "175": {
     "cardmod": {
-      "arts": 11,
+      "arts": 11.0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "176": {
     "cardmod": {
       "arts": 0,
-      "buster": 2,
-      "quick": 12
+      "buster": 2.0,
+      "quick": 12.0
     }
   },
   "177": {
     "flatdamage": {
-      "value": 185
+      "value": 185.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "178": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     }
   },
@@ -1229,61 +1229,61 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 12.0,
+      "quick": 12.0
     }
   },
   "180": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "181": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
-      "quick": 11
+      "buster": 6.0,
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "182": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "183": {
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "184": {
     "cardmod": {
       "arts": 0,
-      "buster": 2,
+      "buster": 2.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "185": {
@@ -1296,32 +1296,32 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "188": {
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "189": {
     "cardmod": {
-      "arts": 11,
+      "arts": 11.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "190": {},
   "191": {},
   "192": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -1329,7 +1329,7 @@
   "193": {},
   "194": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     }
@@ -1337,56 +1337,56 @@
   "195": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "196": {
     "cardmod": {
-      "arts": 11,
+      "arts": 11.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "197": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "198": {
     "cardmod": {
-      "arts": 4,
+      "arts": 4.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "199": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     },
     "stargen": {
       "value": 6.5
@@ -1394,19 +1394,19 @@
   },
   "200": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     }
   },
   "201": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     }
@@ -1414,57 +1414,57 @@
   "202": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "203": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
   },
   "204": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "205": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     }
   },
   "206": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "207": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "208": {
@@ -1474,76 +1474,76 @@
       "quick": 0
     },
     "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 12.0,
+      "quick": 12.0
     }
   },
   "209": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "210": {
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "211": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 170
+      "value": 170.0
     }
   },
   "212": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "213": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "214": {
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "215": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "216": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "217": {
     "cardmod": {
       "arts": 0,
-      "buster": 4,
+      "buster": 4.0,
       "quick": 0
     }
   },
@@ -1551,12 +1551,12 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     },
     "stargen": {
       "value": 5.5
@@ -1565,276 +1565,276 @@
   "219": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "220": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "221": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "222": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "223": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "224": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "225": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "226": {
     "cardmod": {
       "arts": 0,
-      "buster": 8,
+      "buster": 8.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "227": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "228": {},
   "229": {},
   "230": {
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "231": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     }
   },
   "232": {},
   "233": {
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "234": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "235": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "236": {},
   "237": {
     "cardmod": {
-      "arts": 7,
+      "arts": 7.0,
       "buster": 0,
       "quick": 0
     }
   },
   "238": {
     "cardmod": {
-      "arts": 12,
-      "buster": 11,
+      "arts": 12.0,
+      "buster": 11.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     },
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "239": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "241": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "242": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "243": {
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     },
     "npgen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "244": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "245": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "246": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "247": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "248": {
     "cardmod": {
       "arts": 0,
-      "buster": 5,
+      "buster": 5.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 12,
-      "buster": 22,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 22.0,
+      "quick": 12.0
     },
     "flatdamage": {
-      "value": 210
+      "value": 210.0
     }
   },
   "249": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "250": {
     "critdamage": {
-      "arts": 2,
-      "buster": 2,
-      "quick": 2
+      "arts": 2.0,
+      "buster": 2.0,
+      "quick": 2.0
     }
   },
   "251": {
     "cardmod": {
       "arts": 0,
-      "buster": 4,
+      "buster": 4.0,
       "quick": 0
     }
   },
@@ -1842,60 +1842,60 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 6
+      "quick": 6.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "253": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "stargen": {
-      "value": 20
+      "value": 20.0
     }
   },
   "254": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "255": {
     "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 12.0,
+      "quick": 12.0
     }
   },
   "256": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "257": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 4
+      "quick": 4.0
     }
   },
   "258": {
     "cardmod": {
-      "arts": 6,
+      "arts": 6.0,
       "buster": 0,
       "quick": 0
     }
   },
   "259": {
     "stargen": {
-      "value": 6
+      "value": 6.0
     }
   },
   "260": {
@@ -1908,46 +1908,46 @@
   "261": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
-      "quick": 4
+      "buster": 12.0,
+      "quick": 4.0
     },
     "flatdamage": {
-      "value": 125
+      "value": 125.0
     }
   },
   "262": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 145
+      "value": 145.0
     }
   },
   "263": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "264": {
     "flatdamage": {
-      "value": 100
+      "value": 100.0
     }
   },
   "265": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -1956,108 +1956,108 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 6
+      "quick": 6.0
     },
     "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 12.0,
+      "quick": 12.0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "267": {
     "stargen": {
-      "value": 8
+      "value": 8.0
     }
   },
   "268": {
     "critdamage": {
-      "arts": 16,
-      "buster": 16,
-      "quick": 16
+      "arts": 16.0,
+      "buster": 16.0,
+      "quick": 16.0
     },
     "flatdamage": {
-      "value": 270
+      "value": 270.0
     }
   },
   "269": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     },
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "270": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "271": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 11,
-      "buster": 11,
-      "quick": 11
+      "arts": 11.0,
+      "buster": 11.0,
+      "quick": 11.0
     }
   },
   "272": {
     "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
+      "arts": 12.0,
+      "buster": 12.0,
+      "quick": 12.0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "273": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "274": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "flatdamage": {
-      "value": 150
+      "value": 150.0
     }
   },
   "275": {
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "276": {
     "critdamage": {
       "arts": 0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "277": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
@@ -2066,64 +2066,64 @@
     "cardmod": {
       "arts": 0,
       "buster": 7.5,
-      "quick": 8
+      "quick": 8.0
     },
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     },
     "npgen": {
-      "value": 5
+      "value": 5.0
     },
     "stargen": {
-      "value": 5
+      "value": 5.0
     }
   },
   "279": {
     "cardmod": {
-      "arts": 8,
-      "buster": 12,
+      "arts": 8.0,
+      "buster": 12.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "280": {
     "cardmod": {
       "arts": 0,
-      "buster": 9,
+      "buster": 9.0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 9,
-      "buster": 9,
-      "quick": 9
+      "arts": 9.0,
+      "buster": 9.0,
+      "quick": 9.0
     },
     "flatdamage": {
-      "value": 235
+      "value": 235.0
     }
   },
   "281": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "282": {
     "cardmod": {
       "arts": 0,
-      "buster": 10,
+      "buster": 10.0,
       "quick": 0
     }
   },
@@ -2131,49 +2131,49 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 7
+      "quick": 7.0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     },
     "flatdamage": {
-      "value": 100
+      "value": 100.0
     }
   },
   "284": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "285": {
     "cardmod": {
-      "arts": 12,
+      "arts": 12.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 2,
-      "buster": 2,
-      "quick": 2
+      "arts": 2.0,
+      "buster": 2.0,
+      "quick": 2.0
     },
     "npmod": {
-      "value": 12
+      "value": 12.0
     }
   },
   "286": {
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "287": {
@@ -2183,83 +2183,83 @@
       "quick": 0
     },
     "flatdamage": {
-      "value": 100
+      "value": 100.0
     }
   },
   "288": {},
   "289": {
     "cardmod": {
       "arts": 0,
-      "buster": 9,
+      "buster": 9.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 185
+      "value": 185.0
     }
   },
   "290": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 9
+      "quick": 9.0
     }
   },
   "291": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 9
+      "quick": 9.0
     }
   },
   "292": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "293": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "294": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "295": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 185
+      "value": 185.0
     }
   },
   "296": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 11
+      "quick": 11.0
     },
     "critdamage": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "297": {
     "cardmod": {
-      "arts": 8,
+      "arts": 8.0,
       "buster": 0,
       "quick": 0
     }
@@ -2268,115 +2268,115 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     }
   },
   "299": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
-      "quick": 9
+      "buster": 12.0,
+      "quick": 9.0
     },
     "flatdamage": {
-      "value": 250
+      "value": 250.0
     }
   },
   "300": {
     "cardmod": {
       "arts": 0,
-      "buster": 10,
+      "buster": 10.0,
       "quick": 0
     }
   },
   "301": {
     "critdamage": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     },
     "flatdamage": {
-      "value": 200
+      "value": 200.0
     }
   },
   "302": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     }
   },
   "303": {
     "critdamage": {
-      "arts": 6,
-      "buster": 6,
-      "quick": 6
+      "arts": 6.0,
+      "buster": 6.0,
+      "quick": 6.0
     }
   },
   "304": {
     "cardmod": {
-      "arts": 9,
+      "arts": 9.0,
       "buster": 0,
       "quick": 0
     }
   },
   "305": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "306": {
     "cardmod": {
       "arts": 0,
-      "buster": 12,
+      "buster": 12.0,
       "quick": 0
     }
   },
   "307": {
     "cardmod": {
-      "arts": 7,
+      "arts": 7.0,
       "buster": 0,
       "quick": 0
     },
     "stargen": {
-      "value": 30
+      "value": 30.0
     }
   },
   "308": {
     "cardmod": {
       "arts": 0,
-      "buster": 6,
+      "buster": 6.0,
       "quick": 0
     }
   },
   "309": {
     "cardmod": {
-      "arts": 8,
-      "buster": 8,
+      "arts": 8.0,
+      "buster": 8.0,
       "quick": 0
     }
   },
   "310": {
     "cardmod": {
       "arts": 0,
-      "buster": 11,
+      "buster": 11.0,
       "quick": 0
     }
   },
   "311": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "312": {
     "cardmod": {
-      "arts": 9,
+      "arts": 9.0,
       "buster": 0,
       "quick": 0
     }
@@ -2385,148 +2385,139 @@
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 7
+      "quick": 7.0
     }
   },
   "314": {
     "cardmod": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
-      "quick": 8
+      "quick": 8.0
     },
     "critdamage": {
-      "arts": 18,
-      "buster": 18,
-      "quick": 18
+      "arts": 18.0,
+      "buster": 18.0,
+      "quick": 18.0
     },
     "npmod": {
-      "value": 20
+      "value": 20.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "315": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 6
+      "quick": 6.0
     }
   },
   "316": {
     "cardmod": {
       "arts": 1.5,
       "buster": 0,
-      "quick": 10
+      "quick": 10.0
     }
   },
   "317": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     }
   },
   "318": {
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "319": {
     "cardmod": {
-      "arts": 5,
+      "arts": 5.0,
       "buster": 0,
       "quick": 0
     },
     "critdamage": {
-      "arts": 10,
+      "arts": 10.0,
       "buster": 0,
       "quick": 0
     },
     "stargen": {
-      "value": 10
+      "value": 10.0
     }
   },
   "320": {
     "cardmod": {
       "arts": 0,
       "buster": 0,
-      "quick": 12
+      "quick": 12.0
     }
   },
   "321": {
     "cardmod": {
-      "quick": 10
+      "arts": 0,
+      "buster": 0,
+      "quick": 10.0
     },
     "critdamage": {
-      "arts": 10,
-      "buster": 10,
-      "quick": 10
+      "arts": 10.0,
+      "buster": 10.0,
+      "quick": 10.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "322": {
     "cardmod": {
-      "arts": 8,
-      "quick": 12
+      "arts": 8.0,
+      "buster": 0,
+      "quick": 12.0
     },
     "flatdamage": {
-      "value": 225
+      "value": 225.0
     }
   },
   "323": {
     "cardmod": {
-      "buster": 4
+      "arts": 0,
+      "buster": 4.0,
+      "quick": 0
     }
   },
   "324": {
     "cardmod": {
-      "arts": 10
+      "arts": 10.0,
+      "buster": 0,
+      "quick": 0
     },
     "flatdamage": {
-      "value": 175
+      "value": 175.0
     }
   },
   "325": {
     "cardmod": {
-      "quick": 8
+      "arts": 0,
+      "buster": 0,
+      "quick": 8.0
     },
     "critdamage": {
-      "arts": 8,
-      "buster": 8,
-      "quick": 8
+      "arts": 8.0,
+      "buster": 8.0,
+      "quick": 8.0
     }
   },
   "326": {
     "cardmod": {
-      "quick": 12
-    }
-  },
-  "327": {
-    "cardmod": {
-      "arts": 4
-    },
-    "critdamage": {
-      "arts": 12,
-      "buster": 12,
-      "quick": 12
-    }
-  },
-  "328": {
-    "cardmod": {
-      "arts": 3
-    },
-    "critdamage": {
-      "arts": 2,
-      "buster": 2,
-      "quick": 2
+      "arts": 0,
+      "buster": 0,
+      "quick": 12.0
     }
   }
 }

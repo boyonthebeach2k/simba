@@ -2508,5 +2508,25 @@
     "cardmod": {
       "quick": 12
     }
+  },
+  "327": {
+    "cardmod": {
+      "arts": 4
+    },
+    "critdamage": {
+      "arts": 12,
+      "buster": 12,
+      "quick": 12
+    }
+  },
+  "328": {
+    "cardmod": {
+      "arts": 3
+    },
+    "critdamage": {
+      "arts": 2,
+      "buster": 2,
+      "quick": 2
+    }
   }
 }

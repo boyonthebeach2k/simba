@@ -2528,5 +2528,15 @@
       "buster": 2,
       "quick": 2
     }
+  },
+  "329": {
+    "cardmod": {
+      "quick": 12
+    },
+    "critdamage": {
+      "arts": 10,
+      "buster": 10,
+      "quick": 10
+    }
   }
 }

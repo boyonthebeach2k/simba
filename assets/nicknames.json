@@ -1628,7 +1628,9 @@
     "sdvr"
   ],
   "321": [
-    "kama"
+    "kama",
+    "skama",
+    "sukama"
   ],
   "322": [
     "caenis"
@@ -1637,21 +1639,34 @@
     "seishounagon"
   ],
   "324": [
-    "jacquesdemolay"
+    "jacquesdemolay",
+    "notmen"
   ],
   "325": [
     "zenobia"
   ],
   "326": [
-    "elisabethbáthory(cinderella)"
+    "elisabethbáthory(cinderella)",
+    "cindereli",
+    "cinderliz",
+    "notkinrider"
   ],
   "327": [
-    "izumonookuni"
+    "izumonookuni",
+    "izumo",
+    "okuni"
   ],
   "328": [
-    "mysteriousranmarux"
+    "mysteriousranmarux",
+    "ranmaru",
+    "ranran",
+    "ran",
+    "mrx"
   ],
   "329": [
-    "sakamotoryouma"
+    "sakamotoryouma",
+    "lyouma",
+    "mj",
+    "kermit"
   ]
 }

@@ -1060,7 +1060,7 @@ async function calc (servantId, argStr, servantName) {
 				minNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isOverkill)/2)) / 100;
 				maxNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isMaxOverkill)/2)) / 100;
 
-				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(currEnemyHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
+				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
 
 			}
 

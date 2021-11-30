@@ -1600,6 +1600,10 @@ async function multiEnemy (servant, argStr, servantId, matches) {
 			if (enemy.command.match(/\s+--hp=\d+/g) != null) {
 
 				refund = true;
+				enemy.hp = +enemy.command.match(/\s+--hp=\d+/g)[0].split('=')[1];
+				enemy.MinRemHp = enemy.hp - testDamage[1];
+				enemy.remHp = enemy.hp - testDamage[0];
+				enemy.maxRemHp = enemy.hp - testDamage[2];
 				enemy.minrollRefund = testReply[1].minNPRegen;
 				enemy.maxrollRefund = testReply[1].maxNPRegen;
 				enemy.minrollMinStars = testReply[2].minrollTotalMinStars;

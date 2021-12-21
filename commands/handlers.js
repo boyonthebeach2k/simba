@@ -48,6 +48,7 @@ async function messageCreateHandler (message) {
 		}
 		catch (e) {
 
+			console.log(e);
 			reply = {content: 'Error: Malformed command.'};
 
 		}

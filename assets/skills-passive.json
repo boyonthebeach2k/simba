@@ -1,44 +1,32 @@
 {
   "1": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 6
     }
   },
   "2": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     }
   },
   "3": {},
   "4": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 6
     }
   },
   "5": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     }
   },
   "6": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     }
   },
   "7": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     },
     "flatdamage": {
@@ -47,8 +35,6 @@
   },
   "8": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 10
     },
     "flatdamage": {
@@ -57,15 +43,12 @@
   },
   "9": {
     "cardmod": {
-      "arts": 0,
       "buster": 12,
       "quick": 8
     }
   },
   "10": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     }
   },

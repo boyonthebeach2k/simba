@@ -2545,22 +2545,23 @@
   "330": {
     "cardmod": {
       "arts": 8,
-      "buster": 0,
       "quick": 12
     }
   },
   "331": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 11
     }
   },
   "332": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 12
+    }
+  },
+  "333": {},
+  "334": {
+    "cardmod": {
+      "arts": 5
     }
   }
 }

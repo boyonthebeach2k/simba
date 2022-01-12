@@ -2569,7 +2569,12 @@
       "arts": 12
     },
     "npmod": {
-      "value": 12
+      "value": 10
+    },
+    "critdamage": {
+      "arts": 12,
+      "buster": 12,
+      "quick": 12
     }
   }
 }

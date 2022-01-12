@@ -2563,5 +2563,13 @@
     "cardmod": {
       "arts": 5
     }
+  },
+  "335": {
+    "cardmod": {
+      "arts": 12
+    },
+    "npmod": {
+      "value": 12
+    }
   }
 }

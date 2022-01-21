@@ -1745,6 +1745,46 @@ async function wikia (search) {
 	});
 }
 
+async function lolwiki (search) {
+
+	search = search.join(' ');
+
+	return new Promise((resolve) => {
+
+		https.get('https://www.google.com/search?q=site%3Aleagueoflegends.fandom.com/+' + search.replace(/ /g, '+'), function(res) {
+
+			let data = '';
+
+			res.on('data', function (chunk) {
+
+				data += chunk;
+
+			});
+
+			res.on('end', () => {
+
+				document = (new JSDOM(data, {pretendToBeVisual: true})).window.document;
+
+				let reply = '';
+
+				try {
+
+					reply = '<' + decodeURI(decodeURI(document.querySelector('a[href^="/url?q=https://leagueoflegends.fandom.com/wiki/"]').href.slice(7).split('&')[0])) + '>';
+					resolve(reply);
+
+				} catch(err) {
+
+					resolve('Error finding result for <https://www.google.com/search?q=site%3Aleagueoflegends.fandom.com/+' + search.replace(/ /g, '+') + '>');
+
+				}
+
+			});
+		});
+
+
+	});
+}
+
 async function bing (search) {
 
 	search = search.join(' ');
@@ -1954,6 +1994,8 @@ module.exports = exports = function commandMap () {
 		.set('gf2', gf2Final)
 		.set('wikia', wikia)
 		.set('w', wikia)
+		.set('lolwiki', lolwiki)
+		.set('lw', lolwiki)
 		.set('google', bing)
 		.set('bing', bing)
 		.set('search', bing)

@@ -7,7 +7,7 @@ const testArgs = `__General arguments__:
 \t**atkmod/a/atk**: atk up/down (put - in front of down values)
 \t**defmod/d**: def up/down
 \t**npmod/n**: np dmg up/down
-\t**cardmod/cm/m**: quick/arts/buster performance up/down
+\t**cardmod/cm/m**: quick/arts/buster performance up/down (does not affect extra card; only em/extramod affects extra card)
 \t**flatdamage/fd/ad**: flat dmg up (e.g. waver s3, saberlot oc)
 \t**semod/se/s**: supereffective np dmg increase (e.g. 150 at oc1 for gilgamesh)
 \t**pmod/p**: powermod for trait damage (e.g. jack oc, raiko s3) or event modifiers

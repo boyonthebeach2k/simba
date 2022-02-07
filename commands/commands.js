@@ -686,7 +686,7 @@ async function calc (servantId, argStr, servantName) {
 		atk = args.totalattack ?? atk;
 
 		let advantage = f(classRelation[servant.className][enemyClass]/f(1000));
-		let cardMod = f(args.cardmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
+		let cardMod = args.extra ? f(0) : f(args.cardmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let critDamage = f(args.critdamage?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let npLevel = (args.nplevel ?? 5) - 1;
 		let atkMod = f(args.atkmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);

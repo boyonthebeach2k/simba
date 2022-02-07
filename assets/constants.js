@@ -33,6 +33,7 @@ const cardArgs = `__Additional card arguments__:
 \t**brave**: forces ecm3.5
 \t**extracardmodifier/ecm**: set extracardmodifier in damage calc; usually no need to use this manually
 \t**critdamage/cd**: critical strength up/down
+\t**artscritdamage/am, bustercritdamage/bm, quickcritdamage/qm**: arts-/buster-/quick- critdamage mod
 \t**busterchainmod/bc**: buster chain bonus`;
 const nonDmgArgs = `__Non-damage arguments__:
 \t**hp**: enemy hp (including this triggers refund output)

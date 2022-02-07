@@ -445,6 +445,9 @@ async function calc (servantId, argStr, servantName) {
 			'--pmod'				:	[Number],
 			'--specialdefensemod'	:	[Number],
 			'--critdamage'			:	[Number],
+			'--artscritdamage'		:	[Number],
+			'--bustercritdamage'	:	[Number],
+			'--quickcritdamage'		:	[Number],
 			'--arts'				:	Boolean,
 			'--quick'				:	Boolean,
 			'--buster'				:	Boolean,
@@ -534,6 +537,9 @@ async function calc (servantId, argStr, servantName) {
 			'--zerker'				:	'--berserker',
 			'--ae'					:	'--alterego',
 			'--cd'					:	'--critdamage',
+			'--acd'					:	'--artscritdamage',
+			'--bcd'					:	'--bustercritdamage',
+			'--qcd'					:	'--quickcritdamage',
 			'--ta'					:	'--totalattack',
 			'--sbg'					:	'--superbg',
 			'--sf'					:	'--superfondant',
@@ -882,6 +888,10 @@ async function calc (servantId, argStr, servantName) {
 		if (args.buster || (servant.noblePhantasms[np].card === 'buster' && !faceCard)) cardMod += (args.bustermod?.reduce((acc, val) => acc + val) ?? 0)/100;
 		if (args.quick || (servant.noblePhantasms[np].card === 'quick' && !faceCard)) cardMod += (args.quickmod?.reduce((acc, val) => acc + val) ?? 0)/100;
 		if (args.extra) cardMod += (args.extramod?.reduce((acc, val) => acc + val) ?? 0)/100;
+
+		if (args.arts) critDamage += (args.artscritdamage?.reduce((acc, val) => acc + val) ?? 0)/100;
+		if (args.buster) critDamage += (args.bustercritdamage?.reduce((acc, val) => acc + val) ?? 0)/100;
+		if (args.quick) critDamage += (args.quickcritdamage?.reduce((acc, val) => acc + val) ?? 0)/100;
 
 		let val = 0;
 		let fD = f(flatDamage);

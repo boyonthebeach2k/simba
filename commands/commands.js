@@ -4,6 +4,7 @@ const arg = require('arg');
 let document;
 const {JSDOM}  = require('jsdom');
 const https = require('https');
+const fetch = require('node-fetch');
 
 const { servants, NAServants, classList, classRelation, attributeRelation, passiveSkillSet, maxNAServant } = require('../assets/assets.js');
 const { nicknames, freeQuests } = require('../assets/assets.js');
@@ -607,7 +608,7 @@ async function calc (servantId, argStr, servantName) {
 	for (const key of Object.keys(servants)) {
 
 		if (servants[key].collectionNo !== parseInt(servantId)) continue;
-		else if (!('noblePhantasms' in servants[key])) continue;
+		else if ((!('noblePhantasms' in servants[key])) && (servant.collectionNo !== 336)) continue;
 		else servant = servants[key];
 
 		if (args.npLevel > 4) {
@@ -624,6 +625,9 @@ async function calc (servantId, argStr, servantName) {
 			warnMessage += 'Servant level cannot be lesser than 0. Setting Servant level to max (ungrailed).\n';
 			args.level = 0;
 		}
+
+		if (servant.collectionNo === 336)
+			servant.noblePhantasms = [await (await fetch('https://api.atlasacademy.io/nice/JP/NP/1001150')).json()];
 
 		let nps = Object.keys(servant.noblePhantasms), np, cardType;
 

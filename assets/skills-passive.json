@@ -2576,5 +2576,18 @@
       "buster": 12,
       "quick": 12
     }
+  },
+  "336": {
+    "cardmod": {
+      "quick": 10
+    },
+    "flatdamage": {
+      "value": 175
+    },
+    "critdamage": {
+      "arts": 5,
+      "buster": 5,
+      "quick": 5
+    }
   }
 }

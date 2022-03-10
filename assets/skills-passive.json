@@ -1,32 +1,44 @@
 {
   "1": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 6
     }
   },
   "2": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 8
     }
   },
   "3": {},
   "4": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 6
     }
   },
   "5": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 8
     }
   },
   "6": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 8
     }
   },
   "7": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 8
     },
     "flatdamage": {
@@ -35,6 +47,8 @@
   },
   "8": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 10
     },
     "flatdamage": {
@@ -43,12 +57,15 @@
   },
   "9": {
     "cardmod": {
+      "arts": 0,
       "buster": 12,
       "quick": 8
     }
   },
   "10": {
     "cardmod": {
+      "arts": 0,
+      "buster": 0,
       "quick": 8
     }
   },
@@ -2447,8 +2464,6 @@
   },
   "321": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 10
     },
     "critdamage": {
@@ -2463,7 +2478,6 @@
   "322": {
     "cardmod": {
       "arts": 8,
-      "buster": 0,
       "quick": 12
     },
     "flatdamage": {
@@ -2472,16 +2486,12 @@
   },
   "323": {
     "cardmod": {
-      "arts": 0,
-      "buster": 4,
-      "quick": 0
+      "buster": 4
     }
   },
   "324": {
     "cardmod": {
-      "arts": 10,
-      "buster": 0,
-      "quick": 0
+      "arts": 10
     },
     "flatdamage": {
       "value": 175
@@ -2489,8 +2499,6 @@
   },
   "325": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 8
     },
     "critdamage": {
@@ -2501,16 +2509,12 @@
   },
   "326": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 12
     }
   },
   "327": {
     "cardmod": {
-      "arts": 4,
-      "buster": 0,
-      "quick": 0
+      "arts": 4
     },
     "critdamage": {
       "arts": 12,
@@ -2520,9 +2524,7 @@
   },
   "328": {
     "cardmod": {
-      "arts": 3,
-      "buster": 0,
-      "quick": 0
+      "arts": 3
     },
     "critdamage": {
       "arts": 2,
@@ -2532,8 +2534,6 @@
   },
   "329": {
     "cardmod": {
-      "arts": 0,
-      "buster": 0,
       "quick": 12
     },
     "critdamage": {
@@ -2568,26 +2568,26 @@
     "cardmod": {
       "arts": 12
     },
-    "npmod": {
-      "value": 10
-    },
     "critdamage": {
       "arts": 12,
       "buster": 12,
       "quick": 12
+    },
+    "stargen": {
+      "value": 10
     }
   },
   "336": {
     "cardmod": {
       "quick": 10
     },
-    "flatdamage": {
-      "value": 175
-    },
     "critdamage": {
       "arts": 5,
       "buster": 5,
       "quick": 5
+    },
+    "flatdamage": {
+      "value": 175
     }
   }
 }

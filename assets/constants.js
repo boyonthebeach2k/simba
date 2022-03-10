@@ -12,6 +12,7 @@ const testArgs = `__General arguments__:
 \t**semod/se/s**: supereffective np dmg increase (e.g. 150 at oc1 for gilgamesh)
 \t**pmod/p**: powermod for trait damage (e.g. jack oc, raiko s3) or event modifiers
 \t**specialdefensemod/sdm**: special defense up/down (e.g. gawain's damage reduction in camelot)
+\t**specialattckmod/sam/attckspecialmod**: special attack mod up/down
 \t**ce/c**: ce attack stat (default: 0)
 \t**fou/f**: fou attack stat (default: 1k)
 \t**totalattack/ta**: sets total attack stat, overrides fou and ce atk

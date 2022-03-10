@@ -445,6 +445,7 @@ async function calc (servantId, argStr, servantName) {
 			'--semod'				:	[Number],
 			'--pmod'				:	[Number],
 			'--specialdefensemod'	:	[Number],
+			'--specialattackmod'	:	[Number],
 			'--critdamage'			:	[Number],
 			'--artscritdamage'		:	[Number],
 			'--bustercritdamage'	:	[Number],
@@ -519,6 +520,9 @@ async function calc (servantId, argStr, servantName) {
 			'--s'					:	'--semod',
 			'--p'					:	'--pmod',
 			'--sdm'					:	'--specialdefensemod',
+			'--dr'					:	'--specialdefensemod',
+			'--attackspecialdamage'	:	'--specialdefensemod',
+			'--sam'	 	 	 	 	:	'--specialdefensemod',
 			'--crit'				:	'--critical',
 			'--bf'					:	'--busterfirst',
 			'--busterchainmod'		:	'--bc',
@@ -702,6 +706,7 @@ async function calc (servantId, argStr, servantName) {
 		let atkMod = f(args.atkmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let defMod = f(args.defmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let specialDefMod = f(args.specialdefensemod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
+		let specialAtkMod = f(args.specialattackmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let npMod = f(args.npmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let attributeAdvantage = attributeRelation[servant.attribute][enemyAttribute]/f(1000);
 		let npMulti = 0;
@@ -905,7 +910,7 @@ async function calc (servantId, argStr, servantName) {
 		if (faceCard) fD += f((args.extra ? 0 : 1) * atk * (args.bc ? 0.2 : 0));
 
 		val = f(f(atk) * f(servantClassRate) * f(advantage) * f(firstCardBonus + f(cardValue) * f(Math.max(f(1 + cardMod), 0))) * f(attributeAdvantage) * f(0.23) * f(npMulti) * (1 + (+isCrit))
-			* f(extraCardModifier) * f(Math.max(f(1 + atkMod - defMod), 0)) * f(Math.max(f(1 - specialDefMod), 0)) * f(Math.max(f(1 + pMod + (npMod * +(!faceCard))), 0.001)) * f(1 + seMod * +(!faceCard)) + fD);
+			* f(extraCardModifier) * f(Math.max(f(1 + atkMod - defMod), 0)) * f(Math.max(f(1 - specialDefMod), 0)) * f(Math.max(f(1 + specialAtkMod), 0.001)) * f(Math.max(f(1 + pMod + (npMod * +(!faceCard))), 0.001)) * f(1 + seMod * +(!faceCard)) + fD);
 
 		if (args.arts) faceCard = 'Arts';
 		else if (args.quick) faceCard = 'Quick';
@@ -1874,7 +1879,7 @@ async function calculate(s) {
 				currentOp = ops[i][calc[j]];
 			} else if (currentOp) {
 				newCalc[newCalc.length - 1] = 
-                    currentOp(newCalc[newCalc.length - 1], calc[j]);
+					currentOp(newCalc[newCalc.length - 1], calc[j]);
 				currentOp = null;
 			} else {
 				newCalc.push(calc[j]);

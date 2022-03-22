@@ -435,6 +435,7 @@ async function calc (servantId, argStr, servantName) {
 			'--setnp'				:	Number,
 			'--ce'					:	Number,
 			'--fou'					:	Number,
+			'--foupaw'				:	Number,
 			'--totalattack'			:	Number,
 			'--cardvalue'			:	Number,
 			'--npval'				:	Number,
@@ -455,6 +456,7 @@ async function calc (servantId, argStr, servantName) {
 			'--buster'				:	Boolean,
 			'--critical'			:	Boolean,
 			'--busterfirst'			:	Boolean,
+			'--nobusterfirst'		:	Boolean,
 			'--artsfirst'			:	Boolean,
 			'--quickfirst'			:	Boolean,
 			'--first'				:	Boolean,
@@ -507,6 +509,7 @@ async function calc (servantId, argStr, servantName) {
 			'--c'					:	'--ce',
 			'--cm'					:	'--cardmod',
 			'--f'					:	'--fou',
+			'--f'					:	'--foupaw',
 			'--cmv'					:	'--cardvalue',
 			'--npv'					:	'--npvalue',
 			'--d'					:	'--defmod',
@@ -526,6 +529,7 @@ async function calc (servantId, argStr, servantName) {
 			'--crit'				:	'--critical',
 			'--bf'					:	'--busterfirst',
 			'--busterchainmod'		:	'--bc',
+			'--no-bf'				:	'--nobusterfirst',
 			'--crv'					:	'--cardrefundvalue',
 			'--af'					:	'--artsfirst',
 			'--qf'					:	'--quickfirst',
@@ -828,9 +832,13 @@ async function calc (servantId, argStr, servantName) {
 			if (args.bc && args.extra) extraCardModifier = 3.5;
 		}
 
+		if (firstCardBonus === 0.5 && args.nobusterfirst)
+			firstCardBonus = 0;
+
 		extraCardModifier = args.extracardmodifier ?? extraCardModifier;
 		firstCardBonus = faceCard ? firstCardBonus : 0;
 		npMulti = faceCard ? 1 : npMulti;
+		atk += faceCard ? args.foupaw : 0;
 
 		if (args.quick || (servant.noblePhantasms[np].card === 'quick' && !faceCard)) {
 			critDamage += f(parseFloat(passiveSkills.critdamage?.quick ?? 0))/f(100);

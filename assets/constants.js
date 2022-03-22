@@ -28,6 +28,7 @@ const cardArgs = `__Additional card arguments__:
 \t**npba** (for example): specify whole chain
 \t**first/second/third/extra**: facecard position
 \t**qf/af/bf**: quick/arts/buster first bonus (automatically applied in bravechain calcs)
+\t**nobusterfirst/no-bf**: disable busterfirst for the card or chain
 \t**card1/card2/card3/card4**: place before arguments that only apply to that one card
 \t	example- \`!test bride ng45 a40 sg50 p30 | a20 | bnpa zerk sky | card1 m50 | card3 d-20 card4 d-20 #bride/merlin\`
 \t**critical/crit**: set facecards to crit
@@ -35,7 +36,8 @@ const cardArgs = `__Additional card arguments__:
 \t**extracardmodifier/ecm**: set extracardmodifier in damage calc; usually no need to use this manually
 \t**critdamage/cd**: critical strength up/down
 \t**artscritdamage/am, bustercritdamage/bm, quickcritdamage/qm**: arts-/buster-/quick- critdamage mod
-\t**busterchainmod/bc**: buster chain bonus`;
+\t**busterchainmod/bc**: buster chain bonus
+\t**foupaw/fp**: beast footprint enhancement for the card`;
 const nonDmgArgs = `__Non-damage arguments__:
 \t**hp**: enemy hp (including this triggers refund output)
 \t**npgain/npgen/ng**: np generation up/down

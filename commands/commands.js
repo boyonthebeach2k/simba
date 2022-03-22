@@ -782,6 +782,7 @@ async function calc (servantId, argStr, servantName) {
 		let npGen = f(args.npgen?.reduce((acc, val) => acc + val) ?? 0)/f(100);
 		let seMod = f(((args.semod?.reduce((acc, val) => acc + val)) ?? 100) - 100)/f(100);
 		let pMod = (args.pmod?.reduce((acc, val) => acc + val) ?? 0)/f(100);
+		let foupaw = (args.foupaw?.reduce((acc, val) => acc + val) ?? 0);
 		let hits;
 
 		if (enemyClass === 'ruler' && servantId === '167') {
@@ -838,7 +839,7 @@ async function calc (servantId, argStr, servantName) {
 		extraCardModifier = args.extracardmodifier ?? extraCardModifier;
 		firstCardBonus = faceCard ? firstCardBonus : 0;
 		npMulti = faceCard ? 1 : npMulti;
-		atk += faceCard ? args.foupaw : 0;
+		atk += faceCard ? foupaw : 0;
 
 		if (args.quick || (servant.noblePhantasms[np].card === 'quick' && !faceCard)) {
 			critDamage += f(parseFloat(passiveSkills.critdamage?.quick ?? 0))/f(100);

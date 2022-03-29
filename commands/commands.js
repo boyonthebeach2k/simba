@@ -435,7 +435,7 @@ async function calc (servantId, argStr, servantName) {
 			'--setnp'				:	Number,
 			'--ce'					:	Number,
 			'--fou'					:	Number,
-			'--foupaw'				:	Number,
+			'--foupaw'				:	[Number],
 			'--totalattack'			:	Number,
 			'--cardvalue'			:	Number,
 			'--npval'				:	Number,
@@ -839,7 +839,7 @@ async function calc (servantId, argStr, servantName) {
 		extraCardModifier = args.extracardmodifier ?? extraCardModifier;
 		firstCardBonus = faceCard ? firstCardBonus : 0;
 		npMulti = faceCard ? 1 : npMulti;
-		atk += faceCard ? foupaw : 0;
+		atk += faceCard ? foupaw ?? 0 : 0;
 
 		if (args.quick || (servant.noblePhantasms[np].card === 'quick' && !faceCard)) {
 			critDamage += f(parseFloat(passiveSkills.critdamage?.quick ?? 0))/f(100);

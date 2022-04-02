@@ -941,6 +941,8 @@ async function calc (servantId, argStr, servantName) {
 			let enemyHp = f(args.enemyhp), reducedHp = 0, maxReducedHp = 0, isMaxOverkill = 0, isOverkill = 0, serverRate, totalGuaranteedStars = 0, totalMaxGuaranteedStars = 0, dropChance = 0;
 			let overkillNo = 0, maxOverkillNo = 0, minrollTotalVal = f(0.9 * f(total - fD) + fD), maxrollTotalVal = f(1.099 * f(total - fD) + fD);
 			let starFields, verboseFields;
+			let descriptionString = '```\n|Hit | Damage |Enemy HP| Stars |\n';
+			let currEnemyHp = enemyHp - reducedHp;
 
 			let cardStarValue = f((args.quick || (servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
 			cardStarValue = f((args.buster || servant.noblePhantasms[np].card === 'buster') ? 0.1 : cardStarValue);
@@ -973,6 +975,8 @@ async function calc (servantId, argStr, servantName) {
 				dropChance = Math.min(f(f(servant.starGen/1000) + f((args.quickfirst &&  (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isOverkill))), 3);
 				totalGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst &&  (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isOverkill))), 3));
 				totalMaxGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst && (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isMaxOverkill))), 3));
+
+				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(currEnemyHp-reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (totalGuaranteedStars+' '.repeat(6)).substring(0, 6) + '|\n';
 
 			}
 
@@ -1014,7 +1018,8 @@ async function calc (servantId, argStr, servantName) {
 				minrollAvgStars,
 				maxrollAvgStars,
 				overkillNo,
-				maxOverkillNo
+				maxOverkillNo,
+				perHitDescription: descriptionString + '\n\n'
 			};
 
 		}
@@ -1365,20 +1370,6 @@ async function chain (servantId, argStr, servantName, match) {
 		testReply = await calc(servantId, attache + baseStr + ' ' + (chain[i].command ?? ''), servantName);
 		maxTestReply = await calc(servantId, maxAttache + baseStr + ' ' + (chain[i].command ?? ''), servantName);
 
-		// /*
-		//  * To avoid clutter, stars and refund shall remain separate where chains are not concerned, butshall be collated for chains.
-		//  * Hence, calc is called again to calculate stars, and the second embed alone is extracted.
-		//  */
-
-		// if (refund) {
-
-		// 	attache += ' --stars ';
-		// 	maxAttache += ' --stars ';
-		// 	testReply.push((await calc(servantId, attache + baseStr + ' ' + chain[i].command, servantName))[1]);
-		// 	maxTestReply.push((await calc(servantId, maxAttache + baseStr + ' ' + chain[i].command, servantName))[1]);
-
-		// } //`stars` is redundant
-
 		let damageVals;
 
 		if (Array.isArray(testReply)) {
@@ -1414,9 +1405,6 @@ async function chain (servantId, argStr, servantName, match) {
 		accReducedHp = (testReply[1]?.reducedHp ?? 0);
 		maxAccReducedHp = (maxTestReply[1]?.maxReducedHp ?? 0);
 
-		//minEnemyHp -= accReducedHp;
-		//maxEnemyHp -= maxAccReducedHp;
-
 		if (chain[i+1]?.np !== false) {
 
 			minEnemyHp -= accReducedHp;
@@ -1431,7 +1419,10 @@ async function chain (servantId, argStr, servantName, match) {
 
 		enemyClassEmoji = testReply[0].enemyClassEmoji;
 
-		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\naccReducedHp: ${accReducedHp},\n[enemyHp-accReducedHp]: ${minEnemyHp-accReducedHp},\n[accReducedHp > (enemyHp-accReducedHp)]?: ${accReducedHp > (minEnemyHp-accReducedHp)},\noverkillNo: ${overkillNo},\n next card NP: ${chain[i+1]?.np === true}\n\n`;
+		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\n`
+		+ `accReducedHp: ${accReducedHp},\n[enemyHp-accReducedHp]: ${minEnemyHp-accReducedHp},\n`
+		+`[accReducedHp > (enemyHp-accReducedHp)]?: ${accReducedHp > (minEnemyHp-accReducedHp)},`
+		+`\noverkillNo: ${overkillNo},\nnext card NP: ${chain[i+1]?.np === true}\n\n`;
 
 		if (testReply[2]?.name === 'stars') {
 
@@ -1441,6 +1432,7 @@ async function chain (servantId, argStr, servantName, match) {
 			maxrollTotalMaxStars += testReply[2].maxrollTotalMaxStars;
 			minrollAvgStars += Math.floor((testReply[2].minrollTotalMinStars + testReply[2].minrollTotalMaxStars)/2);
 			maxrollAvgStars += Math.floor((testReply[2].maxrollTotalMinStars + testReply[2].maxrollTotalMaxStars)/2);
+			debugDesc += testReply[2].perHitDescription.replace('```', '');
 
 		}
 

@@ -941,8 +941,7 @@ async function calc (servantId, argStr, servantName) {
 			let enemyHp = f(args.enemyhp), reducedHp = 0, maxReducedHp = 0, isMaxOverkill = 0, isOverkill = 0, serverRate, totalGuaranteedStars = 0, totalMaxGuaranteedStars = 0, dropChance = 0;
 			let overkillNo = 0, maxOverkillNo = 0, minrollTotalVal = f(0.9 * f(total - fD) + fD), maxrollTotalVal = f(1.099 * f(total - fD) + fD);
 			let starFields, verboseFields;
-			let descriptionString = '```\n|Hit | Damage |Enemy HP| Stars |\n';
-			let currEnemyHp = enemyHp - reducedHp;
+			let descriptionString = 'Card star bracket per hit: [';
 
 			let cardStarValue = f((args.quick || (servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
 			cardStarValue = f((args.buster || servant.noblePhantasms[np].card === 'buster') ? 0.1 : cardStarValue);
@@ -976,9 +975,11 @@ async function calc (servantId, argStr, servantName) {
 				totalGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst &&  (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isOverkill))), 3));
 				totalMaxGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst && (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isMaxOverkill))), 3));
 
-				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(currEnemyHp-reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (totalGuaranteedStars+' '.repeat(6)).substring(0, 6) + '|\n';
+				descriptionString += totalGuaranteedStars*100 + '% - ' + totalMaxGuaranteedStars*100 + '%, ';
 
 			}
+
+			descriptionString = descriptionString.slice(0,descriptionString.length - 2) + ']';
 
 			let minrollTotalMinStars = totalGuaranteedStars;
 			let minrollTotalMaxStars = totalGuaranteedStars + hits.length * +!!(dropChance - Math.floor(dropChance));
@@ -1019,7 +1020,7 @@ async function calc (servantId, argStr, servantName) {
 				maxrollAvgStars,
 				overkillNo,
 				maxOverkillNo,
-				perHitDescription: descriptionString + '\n\n'
+				perHitDescription: descriptionString + '\n'
 			};
 
 		}
@@ -1422,7 +1423,7 @@ async function chain (servantId, argStr, servantName, match) {
 		debugDesc +=  `command str: ${attache + baseStr + ' ' + (chain[i].command ?? '')},\n`
 		+ `accReducedHp: ${accReducedHp},\n[enemyHp-accReducedHp]: ${minEnemyHp-accReducedHp},\n`
 		+`[accReducedHp > (enemyHp-accReducedHp)]?: ${accReducedHp > (minEnemyHp-accReducedHp)},`
-		+`\noverkillNo: ${overkillNo},\nnext card NP: ${chain[i+1]?.np === true}\n\n`;
+		+`\noverkillNo: ${overkillNo},\nnext card NP: ${chain[i+1]?.np === true}\n`;
 
 		if (testReply[2]?.name === 'stars') {
 
@@ -1432,7 +1433,7 @@ async function chain (servantId, argStr, servantName, match) {
 			maxrollTotalMaxStars += testReply[2].maxrollTotalMaxStars;
 			minrollAvgStars += Math.floor((testReply[2].minrollTotalMinStars + testReply[2].minrollTotalMaxStars)/2);
 			maxrollAvgStars += Math.floor((testReply[2].maxrollTotalMinStars + testReply[2].maxrollTotalMaxStars)/2);
-			debugDesc += testReply[2].perHitDescription.replace('```', '');
+			debugDesc += testReply[2].perHitDescription.replace('```', '') + '\n\n';
 
 		}
 

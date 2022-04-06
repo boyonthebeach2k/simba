@@ -2589,5 +2589,13 @@
     "flatdamage": {
       "value": 175
     }
+  },
+  "337": {
+    "cardmod": {
+      "quick": 8
+    },
+    "flatdamage": {
+      "value": 150
+    }
   }
 }

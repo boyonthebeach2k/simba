@@ -982,7 +982,7 @@ async function calc (servantId, argStr, servantName) {
 				totalGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst &&  (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isOverkill))), 3));
 				totalMaxGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst && (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isMaxOverkill))), 3));
 
-				descriptionString += totalGuaranteedStars*100 + '% - ' + totalMaxGuaranteedStars*100 + '%, ';
+				descriptionString += Math.floor(dropChance)*100 + '% - ' + (dropChance > Math.floor(dropChance) ? Math.floor(dropChance) + 1 : Math.floor(dropChance))*100 + '%, ';
 
 				thisCardMinDamage += thisHitMinDamage;
 				thisCardMaxDamage += thisHitMaxDamage;

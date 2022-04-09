@@ -960,9 +960,16 @@ async function calc (servantId, argStr, servantName) {
 
 			serverRate = args.serverrate ?? serverRate;
 
+			let thisCardMinDamage = 0, thisCardMaxDamage = 0;
+
 			for (let i = 0; i < hits.length; i++) {
 
-				let hit = hits[i], thisHitMinDamage = f(minrollTotalVal * f(hit) / f(100)), thisHitMaxDamage = Math.floor(f(maxrollTotalVal * f(hit) / f(100)));
+				let hit = hits[i], thisHitMinDamage = Math.floor(f(minrollTotalVal * f(hit) / f(100))), thisHitMaxDamage = Math.floor(f(maxrollTotalVal * f(hit) / f(100)));
+
+				if (i === hits.length - 1) {
+					thisHitMinDamage = minrollTotalVal - thisCardMinDamage;
+					thisHitMaxDamage = minrollTotalVal - thisCardMaxDamage;
+				}
 
 				reducedHp += thisHitMinDamage;
 				maxReducedHp += thisHitMaxDamage;
@@ -976,6 +983,9 @@ async function calc (servantId, argStr, servantName) {
 				totalMaxGuaranteedStars += Math.floor(Math.min(f(f(servant.starGen/1000) + f((args.quickfirst && (faceCard !== 'NP')) ? 0.2 : 0) + f(cardStarValue * f(1 + cardMod)) + f(serverRate) + f(starGen) + f(0.2 * +(isCrit)) + f(0.3 * +(isMaxOverkill))), 3));
 
 				descriptionString += totalGuaranteedStars*100 + '% - ' + totalMaxGuaranteedStars*100 + '%, ';
+
+				thisCardMinDamage += thisHitMinDamage;
+				thisCardMaxDamage += thisHitMaxDamage;
 
 			}
 
@@ -1077,9 +1087,16 @@ async function calc (servantId, argStr, servantName) {
 
 			descriptionString = '```\n|Hit | Damage |Enemy HP| Refund |\n';
 
+			let thisCardMinDamage = 0, thisCardMaxDamage = 0;
+
 			for (let i = 0; i < hits.length; i++) {
 
 				let hit = hits[i], thisHitMinDamage = Math.floor(f(minrollTotalVal * f(hit) / f(100))), thisHitMaxDamage = Math.floor(f(maxrollTotalVal * f(hit) / f(100)));
+
+				if (i === hits.length - 1) {
+					thisHitMinDamage = minrollTotalVal - thisCardMinDamage;
+					thisHitMaxDamage = minrollTotalVal - thisCardMaxDamage;
+				}
 
 				reducedHp += thisHitMinDamage;
 				maxReducedHp += thisHitMaxDamage;
@@ -1095,6 +1112,9 @@ async function calc (servantId, argStr, servantName) {
 				maxNPRegen += Math.floor(Math.floor(baseNPGain * f(1 + (+isCrit))) * f((2 + isMaxOverkill)/2)) / 100;
 
 				descriptionString += '| ' + ((i+1)+'   ').substring(0, 3) + '| ' +(Math.floor(thisHitMinDamage)+' '.repeat(7)).substring(0, 7) + '|' + (Math.floor(currEnemyHp-reducedHp)+' '.repeat(8)).substring(0, 8) + '| ' + (minNPRegen.toFixed(2)+'%'+' '.repeat(7)).substring(0, 7) + '|\n';
+
+				thisCardMinDamage += thisHitMinDamage;
+				thisCardMaxDamage += thisHitMaxDamage;
 
 			}
 

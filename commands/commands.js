@@ -968,7 +968,7 @@ async function calc (servantId, argStr, servantName) {
 
 				if (i === hits.length - 1) {
 					thisHitMinDamage = minrollTotalVal - thisCardMinDamage;
-					thisHitMaxDamage = minrollTotalVal - thisCardMaxDamage;
+					thisHitMaxDamage = maxrollTotalVal - thisCardMaxDamage;
 				}
 
 				reducedHp += thisHitMinDamage;
@@ -1095,7 +1095,7 @@ async function calc (servantId, argStr, servantName) {
 
 				if (i === hits.length - 1) {
 					thisHitMinDamage = minrollTotalVal - thisCardMinDamage;
-					thisHitMaxDamage = minrollTotalVal - thisCardMaxDamage;
+					thisHitMaxDamage = maxrollTotalVal - thisCardMaxDamage;
 				}
 
 				reducedHp += thisHitMinDamage;

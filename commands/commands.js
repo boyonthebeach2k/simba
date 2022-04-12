@@ -943,10 +943,10 @@ async function calc (servantId, argStr, servantName) {
 			let starFields, verboseFields;
 			let descriptionString = 'Card star bracket per hit: [';
 
-			let cardStarValue = f(((faceCard && args.quick) || ((faceCard !== 'NP') && servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
-			cardStarValue = f(((faceCard && args.buster) || ((faceCard !== 'NP') && servant.noblePhantasms[np].card === 'buster')) ? 0.1 : cardStarValue);
-			if (args.second && faceCard) cardStarValue += f(0.05 * (args.quick ? 10 : 1));
-			else if (args.third && faceCard) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
+			let cardStarValue = f((((faceCard && faceCard !== 'NP') && args.quick) || ((faceCard === 'NP') && servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
+			cardStarValue = f((((faceCard && faceCard !== 'NP') && args.buster) || ((faceCard === 'NP') && servant.noblePhantasms[np].card === 'buster')) ? 0.1 : cardStarValue);
+			if (args.second && (faceCard && faceCard !== 'NP')) cardStarValue += f(0.05 * (args.quick ? 10 : 1));
+			else if (args.third && (faceCard && faceCard !== 'NP')) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
 
 			if (args.quick && !args.second && !args.third)
 				args.quickfirst = true;//hack, fix later

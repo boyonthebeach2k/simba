@@ -943,8 +943,8 @@ async function calc (servantId, argStr, servantName) {
 			let starFields, verboseFields;
 			let descriptionString = 'Card star bracket per hit: [';
 
-			let cardStarValue = f(((faceCard && args.quick) || (!faceCard && servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
-			cardStarValue = f(((faceCard && args.buster) || (!faceCard && servant.noblePhantasms[np].card === 'buster')) ? 0.1 : cardStarValue);
+			let cardStarValue = f(((faceCard && args.quick) || ((faceCard !== 'NP') && servant.noblePhantasms[np].card === 'quick')) ? 0.8 : 0);
+			cardStarValue = f(((faceCard && args.buster) || ((faceCard !== 'NP') && servant.noblePhantasms[np].card === 'buster')) ? 0.1 : cardStarValue);
 			if (args.second && faceCard) cardStarValue += f(0.05 * (args.quick ? 10 : 1));
 			else if (args.third && faceCard) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
 
@@ -952,12 +952,14 @@ async function calc (servantId, argStr, servantName) {
 				args.quickfirst = true;//hack, fix later
 
 			switch (enemyClass) {
-			case 'archer': serverRate = 0.05; break;
+			case 'archer':
+			case 'alterego': serverRate = 0.05; break;
 			case 'lancer': serverRate = -0.05; break;
 			case 'rider': serverRate = 0.1; break;
 			case 'assassin':
 			case 'avenger':
 			case 'pretender': serverRate = -0.01; break;
+			case 'foreigner': serverRate = 0.2; break;
 			default: serverRate = 0; break;
 			}
 

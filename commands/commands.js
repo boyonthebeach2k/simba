@@ -948,6 +948,9 @@ async function calc (servantId, argStr, servantName) {
 			if (args.second && faceCard) cardStarValue += f(0.05 * (args.quick ? 10 : 1));
 			else if (args.third && faceCard) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
 
+			if (args.quick && !args.second && !args.third)
+				args.quickfirst = true;//hack, fix later
+
 			switch (enemyClass) {
 			case 'archer': serverRate = 0.05; break;
 			case 'lancer': serverRate = -0.05; break;

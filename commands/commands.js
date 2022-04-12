@@ -951,7 +951,7 @@ async function calc (servantId, argStr, servantName) {
 			switch (enemyClass) {
 			case 'archer': serverRate = 0.05; break;
 			case 'lancer': serverRate = -0.05; break;
-			case 'rider': serverRate = 0.01; break;
+			case 'rider': serverRate = 0.1; break;
 			case 'assassin':
 			case 'avenger':
 			case 'pretender': serverRate = -0.01; break;

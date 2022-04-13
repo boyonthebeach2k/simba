@@ -396,15 +396,18 @@ async function addname (restArgs, message) {
 
 		let [id, ...nickname] = restArgs;
 		nickname = nickname.join(' ');
-		console.log(id, nickname, id in nicknames);
+		console.log(id, nickname);
 
-		if (id in nicknames) {
-			if (!nicknames[id].includes(nickname)) {
-				nicknames[id].push(nickname);
-				require('fs').writeFileSync('./assets/nicknames.json', JSON.stringify(nicknames, null, 2));
-				reply = { content: `Set ${id}: ${nickname}` };
-			}
+		if (!(id in nicknames)) {
+			nicknames[id] = [];
 		}
+	
+		if (!nicknames[id].includes(nickname)) {
+			nicknames[id].push(nickname);
+			require('fs').writeFileSync('./assets/nicknames.json', JSON.stringify(nicknames, null, 2));
+			reply = { content: `Set ${id}: ${nickname}` };
+		}
+
 	}
 
 	return reply;

@@ -950,16 +950,16 @@ async function calc (servantId, argStr, servantName) {
 			cardStarValue = f((((faceCard && faceCard !== 'NP') && args.buster) || ((faceCard === 'NP') && servant.noblePhantasms[np].card === 'buster')) ? 0.1 : cardStarValue);
 			if (args.second && (faceCard && faceCard !== 'NP')) cardStarValue += f(0.05 * (args.quick ? 10 : 1));
 			else if (args.third && (faceCard && faceCard !== 'NP')) cardStarValue += f(0.05 * (args.quick ? 20 : 2));
+			if (args.extra) cardStarValue = f(1);
 
 			if (args.quick && !args.second && !args.third)
 				args.quickfirst = true;//hack, fix later
 
 			switch (enemyClass) {
-			case 'archer':
 			case 'alterego': serverRate = 0.05; break;
 			case 'lancer': serverRate = -0.05; break;
 			case 'rider': serverRate = 0.1; break;
-			case 'assassin':
+			case 'assassin': serverRate = -0.1; break;
 			case 'avenger':
 			case 'pretender': serverRate = -0.01; break;
 			case 'foreigner': serverRate = 0.2; break;

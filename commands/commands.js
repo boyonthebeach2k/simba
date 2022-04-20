@@ -739,7 +739,7 @@ async function calc (servantId, argStr, servantName) {
 
 		for (const npFn in npFns) {
 			if (npFns[npFn].funcType.includes('damageNp')) {
-				npMulti = f(npFns[npFn].svals[npLevel].Value)/f(10);
+				npMulti = f(npFns[npFn].svals[npLevel]?.Value ?? 0)/f(10);
 				break;
 			}
 		}
